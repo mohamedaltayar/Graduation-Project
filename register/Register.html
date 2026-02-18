@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Irrigation</title>
+<link rel="stylesheet" href="../theme/theme.css">
+<link rel="stylesheet" href="../theme/design-system.css">
+<link rel="stylesheet" href="Register.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="logo"></div>
+
+</header>
+
+<section class="register-section">
+  <div class="register-box">
+   <h2>Create Your Account</h2>
+
+    <form action="register.php" method="POST">
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm" placeholder="Confirm Password" required>
+      <button type="submit">Create Account</button>
+    </form>
+
+    <div class="divider">or</div>
+
+    <button id="googleBtn">
+      <img src="../register/google.svg" alt="google logo">
+      Sign up with Google
+    </button>
+
+    <p class="login-link">
+      Already have an account?
+      <a style="color:black;" href="../login/Login.html"> <b>Login</b></a>
+    </p>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div>
+      <h3>HydroGen</h3>
+      <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
+    </div>
+
+    <div>
+      <h4>Platform</h4>
+      <a href="#">Dashboard</a>
+      <a href="#">Irrigation</a>
+      <a href="#">Analytics</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div>
+      <h4>Follow us</h4>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 HydroGen — All rights reserved.
+  </div>
+</footer>
+
+<script src="register.js"></script>
+<script src="../theme/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Smart Irrigation</title>
+
+  <link rel="stylesheet" href="../theme/theme.css">
+  <link rel="stylesheet" href="../theme/design-system.css">
+  <link rel="stylesheet" href="Login.css">
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="left_header">
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+ <a href="../home/Home.html" class="logo">
+    <img src="../assets/water-drop-rain-drink 1.svg" alt="" class="icon">
+  <span class="brand">HydroGen</span> — Intelligent Water Systems
+</a>
+
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
+    <a href="../dashboard/Dashboard.html" class="menu-item"><img src="../assets/Vector 48 (Stroke).svg" class="icon">Dashboard</a>
+    <a href="../about/Irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg" class="icon">Irrigation</a>
+    <a href="../contact/Analytics.html" class="menu-item"><img src="../assets/Trending-up.svg" class="icon">Analytics</a>
+    <a href="../login/Login.html" class="menu-item active"><img src="../assets/login-02.svg" class="icon">Login</a>
+
+    <div class="theme-section">
+      <button class="theme-row" id="appearanceBtn">
+        🌙 Appearance ›
+      </button>
+
+      <div class="theme-submenu" id="themeMenu">
+        <button data-theme="system">Use device theme</button>
+        <button data-theme="dark">Dark theme</button>
+        <button data-theme="light">Light theme</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <section class="login-section">
+
+    <div class="login-container">
+
+      <div class="promo-box" id="promoBox">
+        <h1>
+          Manage your <span>Smart Irrigation</span><br>
+          system easily.
+        </h1>
+
+        <p>
+          Control water usage, track plant health, and optimize irrigation
+          using smart technology — all in one platform.
+        </p>
+        <br>
+        <div class="image-stack">
+          <img src="../login/farm-man-working-his-organic-lettuce-garden.jpg" class="img img1">
+          <img src="../login/smart-irrigation-system-saving-water-improving-ai-generated-illustration_866663-14161.avif"
+            class="img img2">
+          <img src="../login/organic-hydroponics-vegetable-farm.jpg" class="img img3">
+        </div>
+      </div>
+
+      <div class="login-box glass fade-in">
+
+        <div id="loginBox">
+          <h2>Login</h2>
+
+          <form>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit">Log in</button>
+          </form>
+          
+          <div class="login-options">
+
+            <div class="remember">
+              <input type="checkbox" id="remember">
+              <label for="remember">Remember me</label>
+            </div>
+
+            <a href="#" class="forgot">Forgot password?</a>
+
+          </div>
+
+          <div class="divider">or</div>
+
+          <button id="googleBtn">
+            <img src="../login/google.svg" alt="google">
+            Continue with Google
+          </button>
+
+          <p class="register-link">
+            Don’t have an account?
+            <span onclick="showRegister()">Create one</span>
+          </p>
+        </div>
+
+        <div id="registerBox" class="hidden">
+          <h2>Create Account</h2>
+
+          <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+          </form>
+
+          <p class="register-link">
+            Already have an account?
+            <span onclick="showLogin()">Login</span>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+<footer class="footer">
+  <div class="footer-grid">
+
+    <div>
+      <h3>HydroGen</h3>
+      <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
+    </div>
+
+    <div>
+      <h4>Platform</h4>
+      <a href="#">Dashboard</a>
+      <a href="#">Irrigation</a>
+      <a href="#">Analytics</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div>
+      <h4>Follow us</h4>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 HydroGen — All rights reserved.
+  </div>
+</footer>
+
+  <script src="Login.js"></script>
+  <script src="../theme/theme.js"></script>
+
+</body>
+
+</html>

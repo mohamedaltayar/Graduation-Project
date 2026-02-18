@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #06420d;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo .brand{
+  color:#ffe44d;
+}
+
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #fff;
+    color: var(--header-bg);
+    transition: .3s;
+}
+.nav a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+.nav a.active {
+    background: #16631f;
+    color: white;
+}
+
+body.dark .nav a{
+    background:white;
+    color:var(--header);
+}
+body.dark .nav a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+body.dark .nav a.active {
+    background: #334155;
+    color: white;
+}
+
+
+
+
+
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--card);
+}
+
+.promo-box {
+    min-height: 100vh;
+    flex: 1;
+    background: linear-gradient(135deg, #0a3d0a, #0e6b1f);
+    color: white;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.promo-box h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.promo-box span {
+    color: #9cffb3;
+}
+
+.promo-box p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #dff5e6;
+}
+
+.promo-img {
+    width: 240px;
+    margin-bottom: 30px;
+}
+
+.image-stack {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    position: absolute;
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+    transition: .3s;
+}
+
+.img1 {
+    top: 30px;
+    left: 0;
+    transform: rotate(-8deg);
+}
+
+.img2 {
+    top: 0;
+    left: 60px;
+    z-index: 2;
+}
+
+.img3 {
+    top: 40px;
+    left: 120px;
+    transform: rotate(8deg);
+}
+
+.image-stack:hover .img1 {
+    transform: rotate(-12deg) translateX(-5px);
+}
+
+.image-stack:hover .img3 {
+    transform: rotate(12deg) translateX(5px);
+}
+
+
+.login-box {
+    min-height: 100vh;
+    flex: 1;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #06420d;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #0b6b1c;
+}
+
+.login-box button {
+    background: #0b6b1c;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #06420d;
+}
+.login-options{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:12px 0 20px;
+  font-size:14px;
+}
+
+
+.remember{
+  display:flex;
+  align-items:center; 
+  gap:8px;
+}
+
+.remember input{
+  width:16px;
+  height:16px;
+  margin:0;
+  vertical-align:middle;
+  accent-color:#0b6b1c;
+}
+.forgot{
+  color:#0b6b1c;
+  text-decoration:none;
+}
+
+.forgot:hover{
+  text-decoration:underline;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.register-link span {
+    color: #0b6b1c;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-link span:hover {
+    text-decoration: underline;
+}
+
+.register-mode {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+
+.register-mode .login-box {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.register-mode {
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.forgot {
+    margin: 10px 0 15px;
+    text-align: center;
+    color: #0b6b1c;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.divider {
+    text-align: center;
+    margin: 18px 0;
+    color: #888;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+#googleBtn {
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#googleBtn img {
+    width: 20px;
+}
+
+.register-link {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #0b6b1c;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ===== MOBILE: hide left side completely ===== */
+@media (max-width: 768px){
+
+  .hero .left,
+  .promo-box{
+    display:none !important;
+  }
+
+  .hero{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px 18px;
+  }
+
+  .login-box,
+  .register-box{
+    width:100%;
+    max-width:420px;
+    margin:60px auto;
+  }
+
+}
+
+
+
+/* ================= TABLET ================= */
+@media (min-width: 769px) and (max-width: 1024px){
+
+  .header{
+    padding:14px 40px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
+  }
+
+  /* يظهر نص الشمال بس مش كله */
+  .hero .left{
+    max-width:600px;
+    margin:auto;
+    animation:fadeUp .6s ease;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .hero .right{
+    margin-top:30px;
+    animation:fadeUp .8s ease;
+  }
+
+  /* الفورم في النص */
+  .login-box,
+  .register-box{
+    max-width:520px;
+    margin:60px auto;
+  }
+
+}
+
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+

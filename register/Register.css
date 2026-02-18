@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color:#020617 !important;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: #06420d;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #3bb54a;
+  background:#ffffff;
+  padding:8px 14px;
+  border-radius:20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav a:hover{
+  background:#e9ffe9;
+}
+
+.nav a.active{
+  background:#093615;
+  color:#ffffff;
+}
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-box {
+  width: 100%;
+  background-color:#ffffff;
+  padding: 45px;
+  border-radius: 12px;
+
+}
+
+.register-box h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #3bb54a;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.register-box input:focus {
+  outline: none;
+  border-color: #3bb54a;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background-color: #083a0e;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.register-box button:hover {
+  background-color: #3bb54a;
+  color: #083a0e;
+}
+#googleBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#googleBtn img{
+  width: 22px;
+  height: 22px;
+}
+
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: black;
+  font-size: 14px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #3bb54a;
+  text-decoration: none;
+}

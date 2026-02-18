@@ -1,0 +1,70 @@
+.wrapper{
+  width:100%;
+  max-width:1200px;
+  margin-inline:auto;
+  padding-inline:clamp(16px, 4vw, 48px);
+}
+
+h1{
+  font-size:clamp(32px, 5vw, 56px);
+  line-height:1.15;
+}
+
+h2{
+  font-size:clamp(26px, 4vw, 40px);
+}
+
+h3{
+  font-size:clamp(22px, 3vw, 32px);
+}
+
+p{
+  font-size:clamp(15px, 1.8vw, 18px);
+  line-height:1.7;
+}
+
+.section{
+  padding-block:clamp(40px, 8vw, 100px);
+}
+
+.section-sm{
+  padding-block:clamp(24px, 5vw, 60px);
+}
+
+.gap-lg{
+  gap:clamp(24px, 5vw, 60px);
+}
+
+.gap-md{
+  gap:clamp(16px, 3vw, 32px);
+}
+
+.gap-sm{
+  gap:clamp(12px, 2vw, 20px);
+}
+
+button,
+.btn{
+  font-size:clamp(14px, 1.5vw, 16px);
+  padding:clamp(10px, 2vw, 14px)
+          clamp(16px, 3vw, 22px);
+}
+
+input,
+textarea,
+select{
+  font-size:clamp(14px, 1.5vw, 16px);
+  padding:clamp(10px, 2vw, 14px);
+}
+@media (max-width: 768px){
+  .hero{
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 768px){
+  .hero h1{
+    font-size: 34px;
+    line-height: 1.2;
+  }
+}
