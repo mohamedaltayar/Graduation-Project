@@ -150,18 +150,14 @@ body {
 .dark .team-grid {
      box-shadow: #1b1b1b 0px 10px 30px -10px;
  }
-.two {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-      margin: 0 auto; 
-      max-width: 830px; 
-}
+ 
+
 
 .three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+
 }
 
 
@@ -184,7 +180,7 @@ body {
  box-shadow:#1b1b1b 0px 10px 30px -10px;
 
 }
-/* glow border */
+
 .member::after {
   content: "";
   position: absolute;
@@ -263,7 +259,6 @@ body {
     line-height: 1.6;
 }
 
-/* icon circle زي الهوم */
 .icon-circle {
     width: 60px;
     height: 60px;
@@ -276,17 +271,27 @@ body {
     color: white;
 }
 
-/* mobile */
-@media(max-width:768px) {
+@media(max-width:767px) {
     .about-features {
         grid-template-columns: 1fr;
     }
-}
+  .team-section{
+    padding: 60px 0;  
+  }
 
-@media (max-width: 768px) {
+  .team-grid{
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;  
+  }
 
-    .two,
-    .three {
-        grid-template-columns: 1fr;
-    }
+  .three{
+    grid-template-columns: 1fr;  
+  }
+
+  .member{
+    max-width: 100%;
+    margin: 10px 0;
+  }
 }

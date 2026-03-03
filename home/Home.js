@@ -96,16 +96,7 @@ function prevTestimonial() {
   updateTestimonial();
 }
 
-function setLevel(percent) {
-  document.getElementById("water").style.height = percent + "%";
-  document.getElementById("percent").innerText = percent + "%";
-}
-let level = 10;
 
-setInterval(() => {
-  level = (level + 5) % 100;
-  setLevel(level);
-}, 1500);
 
 
 document.querySelectorAll(".dash-btn").forEach(btn => {
