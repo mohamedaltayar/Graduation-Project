@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../home/Home.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../theme/theme.css" />
+  <link rel="stylesheet" href="../bootstrap-custom.css" />
+  <link rel="stylesheet" href="../theme/design-system.css" />
+</head>
+<body>
+
+    <header class="header">
+    <div class="left_header">
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+    <a href="../home/Home.html" class="logo">
+      <img src="../assets/water-drop-rain-drink 1.svg" alt="" class="icon">
+      <span class="brand">HydroGen</span> — Intelligent Water Systems
+    </a>
+
+
+    <nav class="nav">
+      <a href="../home/Home.html">Home</a>
+      <a href="../about/Irrigation.html">Irrigation</a>
+      <a href="../contact/Analytics.html">Analytics</a>
+      <a href="../contact/Settings.html">Settings</a>
+    </nav>
+
+    </div>
+    <div class="profile-menu">
+
+      <button class="profile-btn" id="profileBtn">
+        <img src="../assets/Vector.svg" alt="profile">
+      </button>
+
+      <div class="profile-dropdown" id="profileDropdown">
+
+        <div class="profile-header">
+          <div class="avatar">U</div>
+          <div class="user-info">
+            <strong id="username">User Name</strong>
+            <p id="email">email@example.com</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
+        <div class="drop-group">
+
+          <button class="drop-item toggle-lang">
+            <img src="../assets/language_icon_151284.svg" alt="" class="icon">
+            Display language ›
+          </button>
+
+          <div class="drop-submenu lang-menu">
+            <button>English</button>
+            <button>Arabic</button>
+          </div>
+
+        </div>
+        <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
+          out</button>
+
+      </div>
+
+    </div>
+
+    </div>
+  </header>
+<!-- Dashboard page -->
+ <br>
+ <br>
+<br>
+
+    <h1 style="color: #06420d">System Dashboard</h1>
+    <b>Real-time monitoring of your atmospheric water generator</b>
+    <br>
+    <br>
+
+    <div class="top-section">
+        <div class="card">
+            <img src="temperature 1.svg" alt="temperature 1.svg" class="icon" style="background-color:#FDDEDE">
+            <h3>Pressure : </h3>
+            <p style="color:rgb(151, 217, 76);font-size:25px;font-weight: bold;">500</p>
+            <h5>Standard pressure</h5>
+        </div>
+        <div  class="card">
+            <img src="Vector.svg" alt="" class="icon" style="background-color: #CDF9D9;">
+            <h3>Temperature </h3>
+            <p style="color:rgb(151, 217, 76);font-size:25px;font-weight: bold;">24</p>
+            <h5>Ambient temperature</h5>
+
+        </div>
+        <div class="card">
+            <img src="temperature 1.svg" alt="temperature 1.svg" class="icon" style="background-color:#FDDEDE">
+            <h3>Power Status : </h3>
+            <p>Poar  <span style="color:rgb(151, 217, 76);font-size:25px;margin:0;font-weight: bold;" >420w</span>
+           
+            <p >98% Charged</p>
+        </div>
+
+        <div class="card">
+            <img src="temperature 1.svg" alt="temperature 1.svg" class="icon" style="background-color:#FDDEDE">
+            <h3>Water Quality : </h3>
+            <p style="color:rgb(151, 217, 76);font-size:25px;font-weight: bold;">98%</p>
+            <div class="bar"><span style="width: 20%"></span></div>
+        </div>
+        <div class="card">
+            <img src="temperature 1.svg" alt="temperature 1.svg" class="icon" style="background-color:#FDDEDE">
+            <h3>Air Quality : </h3>
+            <p style="color:rgb(151, 217, 76);font-size:25px;font-weight: bold;">92 QI</p>
+            <p>Excellent</p>
+            <div class="bar"><span style="width:40%"></span></div>
+           
+        </div>
+        
+    </div>
+
+
+    <div class="watergen">
+        <h1 style="color:#ffe44d">Water Generation</h1>
+        <strong>Current production metrics</strong>
+        <br>
+        <br>
+        <h4>Today's Production <span style="margin:50px;padding: 10px;color:#16a34a;">245 L / 300 L target</span></h4>
+
+        <div class="bar"><span style="width:20%"></span></div>
+    <div class="time_measure">
+    <div class="sec">
+        <h3>This Week</h3>
+        <p>1,680 L</p>
+    </div>
+    <div class="sec">
+        <h3>This Month</h3>
+        <p>7,245 L</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="water-storge">
+    <h1 style="color:#ffe44d">Water Storage</h1>
+    <strong>Tank levels and distribution</strong>
+     <h4>Main Tank <span style="color:#16a34a;margin:50px;padding: 10px;">1,560 L / 2,000 L</span></h4>
+     <div class="bar"><span style="width: 50%"></span></div>
+
+    <h4>Reserve Tank <span style="color:#16a34a;margin:50px;padding: 10px;">450 L / 500 L</span></h4>
+     <!-- <div class="progress-container">
+    <div class="progress-bar" id="waterstorage2"></div> 
+    </div> -->
+    <div class="bar"><span style="width: 50px;"></span></div>
+</div>
+
+
+<div class="Distribution">
+
+ <h4>Distribution <img src="laundry-water-drop 1.svg" alt="" style="margin:50px;padding: 10px;margin-left:100px;color:rgb(0, 0, 0);font-weight:bold;width: 50px;background-color:rgb(192, 199, 205)" class="icon"></h4>
+ <hr>
+ 
+ <h4>Irrigation <span style="color:#16a34a;margin:50px;padding: 10px;margin-left:100px;font-weight:bold">65%</span></h4>
+ <hr>
+ <h4>Reserve <span style="color:#16a34a;margin:50px;padding: 10px;margin-left:100px;font-weight:bold">25%</span></h4>
+ <hr> 
+ <h4>Emergency <span style="color:#16a34a;margin:50px;padding: 10px;margin-left:100px;font-weight:bold">10%</span></h4>
+</div>
+
+   
+
+<footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <h3>HydroGen</h3>
+        <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
+      </div>
+
+      <div>
+        <h4>Platform</h4>
+        <a href="../dashboard/dashboard.html">Dashboard</a>
+        <a href="../irrigation/irrigation.html">Irrigation</a>
+        <a href="../analytics/analytics.html">Analytics</a>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="../about/about.html">About</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/201005339569?text=Hello%20I%20want%20to%20ask%20about%20the%20app" target="_blank">
+
+          <img src="../assets/whatsapp.svg" alt=""
+            style="width: 20px; height: 20px;">
+          Chat on WhatsApp
+        </a>
+        <a href="tel:+201005339569">
+          <img src="../assets/call.svg" alt=""
+            style="width: 20px; height: 20px; ">
+          call
+        </a>
+        <a href="mailto:info@hydrogen.com">
+          <img src="../assets/email.svg" alt=""
+                      style="width: 20px; height: 20px;">
+          send email
+        </a>
+        <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank">
+          <img src="../assets/location.svg" alt=""
+                      style="width: 20px; height: 20px; ">
+          visit us</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 HydroGen — All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="pressureChart"></canvas>
+
+<script>
+const ctx = document.getElementById('pressureChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+    datasets: [{
+      label: 'Pressure',
+      data: [480, 500, 490, 510, 505, 495, 500],
+      borderColor: '#4CAF50',
+      backgroundColor: 'rgba(76,175,80,0.2)',
+      tension: 0.4,
+      fill: true
+    }]
+  },
+});
+</script> -->
+    <script src="../home/Home.js"></script>
+     <script src="../theme/theme.js"></script>
+      <script src="dashboard.js"></script>
+</body>
+</html>
