@@ -1,124 +1,336 @@
-/* analytics.css */
+/* analytics.css - Clean & Organized Enterprise Dashboard */
 
-/* Analytics specific chart and metrics sizing */
-.chart-container {
-  position: relative;
+/* --- Global Fixes & Custom Scrollbar --- */
+html, body {
+  overflow-x: hidden !important; 
   width: 100%;
-  min-height: 250px;
 }
 
-.grey-bg {
-  background-color: rgba(0, 0, 0, 0.03);
+/* Professional Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-body.dark .grey-bg {
-  background-color: rgba(255, 255, 255, 0.03);
+::-webkit-scrollbar-track {
+  background: var(--bg, #f8fafc);
+  border-radius: 4px;
 }
 
-/* Time Range Filter styling */
-.bento-filter-group {
-  background: rgba(0, 0, 0, 0.05);
-  border: none !important;
-  padding: 4px;
-  border-radius: 16px !important;
-}
-
-body.dark .bento-filter-group {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.bento-filter-group .btn {
-  border: none !important;
-  border-radius: 12px !important;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 8px 16px;
-  color: var(--text-color);
-  background: transparent;
-  transition: all 0.2s ease;
-}
-
-.bento-filter-group .btn-check:checked + .btn {
-  background: var(--accent) !important;
-  color: white !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.bento-filter-group .btn:hover:not(.btn-check:checked + .btn) {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* Clear Button */
-#clearAnalyticsBtn {
-  background: rgba(220, 53, 69, 0.1);
-  color: #dc3545;
-  transition: all 0.2s ease;
-}
-
-#clearAnalyticsBtn:hover {
-  background: #dc3545 !important;
-  color: white !important;
-  transform: translateY(-2px);
-}
-
-/* Bento Card Enhancements */
-.fw-black {
-  font-weight: 950;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.7) !important;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
-body.dark .glass-card {
-  background: rgba(15, 23, 42, 0.5) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
+body.dark ::-webkit-scrollbar-track { background: #0f172a; }
+body.dark ::-webkit-scrollbar-thumb { background: #334155; }
+body.dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+
+/* --- Container & Layout --- */
+.web-dashboard-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(20px, 4vw, 50px);
 }
 
-/* Chart container sizing */
-.chart-container.chart-lg {
-  height: 300px;
+.dashboard-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.chart-container.chart-md {
-  height: 250px;
+/* --- Clean Typography --- */
+.text-gradient {
+  color: var(--text);
 }
 
-/* Progress bar sizing */
-.progress.progress-sm {
-  height: 6px;
+body.dark .text-gradient {
+  color: #f8fafc;
 }
 
-/* Progress bar width via data attribute */
-.progress-bar[data-width="0"] {
-  width: 0%;
+.text-gradient-blue { color: #2563eb; }
+.text-gradient-yellow { color: #d97706; }
+.text-gradient-purple { color: #7c3aed; }
+.text-gradient-green { color: #059669; }
+.text-gradient-orange { color: #ea580c; }
+
+body.dark .text-gradient-blue { color: #60a5fa; }
+body.dark .text-gradient-yellow { color: #fcd34d; }
+body.dark .text-gradient-purple { color: #a78bfa; }
+body.dark .text-gradient-green { color: #34d399; }
+body.dark .text-gradient-orange { color: #fb923c; }
+
+/* --- Icon Wrappers --- */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  margin-right: 14px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.progress {
-  background-color: rgba(0, 0, 0, 0.05);
+.icon-wrapper-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
-  overflow: hidden;
+  font-size: 1.1rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-body.dark .progress {
-  background-color: rgba(255, 255, 255, 0.05);
+.premium-hover:hover .icon-wrapper,
+.premium-hover:hover .icon-wrapper-sm {
+  transform: scale(1.15) rotate(5deg);
 }
 
-.progress-bar {
-  border-radius: 10px;
-  transition: width 1s ease-in-out;
+.icon-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.icon-yellow { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.icon-purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.icon-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.icon-orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+
+/* --- Premium Modern Cards --- */
+.glass-panel {
+  background: var(--card, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+body.dark .glass-panel {
+  background: var(--card, #0f172a);
+  border-color: var(--border, #334155);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.premium-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.12), 0 12px 16px -4px rgba(0, 0, 0, 0.06);
+  border-color: rgba(99, 102, 241, 0.3); /* Subtle energetic blur hue */
+}
+
+body.dark .premium-hover:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Metric Cards --- */
+.metric-card {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.metric-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.metric-card-body {
+  margin-top: auto;
+}
+
+.metric-unit {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.5;
+  margin-left: 4px;
+}
+
+.fw-black {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* --- Dashboard Chart Cards --- */
+.dashboard-card {
+  padding: 1.5rem;
+}
+
+.border-bottom-soft {
+  border-bottom: 1px solid var(--border, #f1f5f9);
+}
+
+body.dark .border-bottom-soft {
+  border-bottom: 1px solid var(--border, #1e293b);
+}
+
+.dashboard-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* --- Chart Containers --- */
+.chart-container {
+  position: relative;
+  width: 100%;
+}
+
+.chart-xl { height: 320px; }
+.chart-lg { height: 260px; }
+.chart-md { height: 200px; }
+.chart-sm { height: 160px; }
 
 canvas {
   width: 100% !important;
 }
+
+/* --- Segmented Control (Filters) --- */
+.segmented-control {
+  display: flex;
+  padding: 4px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+}
+
+body.dark .segmented-control {
+  background: rgba(255,255,255,0.03);
+}
+
+.segmented-control-label {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.btn-check:checked + .segmented-control-label {
+  background: var(--card, #ffffff);
+  color: var(--text);
+  opacity: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .btn-check:checked + .segmented-control-label {
+  background: #334155;
+  color: #fff;
+}
+
+.btn-check:not(:checked) + .segmented-control-label:hover {
+  opacity: 1;
+}
+
+/* --- Buttons --- */
+.btn-danger-soft {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 8px 16px;
+}
+
+.btn-danger-soft:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* --- Progress Bars --- */
+.progress-modern {
+  height: 8px;
+  border-radius: 12px;
+  background-color: var(--border, #f1f5f9);
+  overflow: hidden;
+}
+
+body.dark .progress-modern {
+  background-color: var(--border, #1e293b);
+}
+
+.progress-bar {
+  border-radius: 12px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar-idle {
+  background-color: #94a3b8;
+}
+
+body.dark .progress-bar-idle {
+  background-color: #64748b;
+}
+
+.progress-bar[data-width="0"] {
+  width: 0%;
+}
+
+/* --- Dashboard Grid System --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-6 { grid-column: span 6; }
+.span-8 { grid-column: span 8; }
+.span-12 { grid-column: span 12; }
+
+@media (max-width: 1200px) {
+  .span-3 { grid-column: span 6; }
+  .span-8, .span-4 { grid-column: span 12; }
+}
+
+@media (max-width: 768px) {
+  .span-3, .span-4, .span-6, .span-8 { grid-column: span 12; }
+}
+
+/* --- Entrance Animations (Modern Vibe) --- */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-grid > div {
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  will-change: transform, opacity;
+  min-width: 0; /* CRITICAL BUG FIX: Prevents Chart.js from overflowing CSS Grid layout */
+}
+
+/* Staggered load delays for children elements */
+.dashboard-grid > div:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-grid > div:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-grid > div:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-grid > div:nth-child(4) { animation-delay: 0.4s; }
+.dashboard-grid > div:nth-child(5) { animation-delay: 0.5s; }
+.dashboard-grid > div:nth-child(6) { animation-delay: 0.6s; }
+.dashboard-grid > div:nth-child(7) { animation-delay: 0.7s; }
+.dashboard-grid > div:nth-child(8) { animation-delay: 0.8s; }
+

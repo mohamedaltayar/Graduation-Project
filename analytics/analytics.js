@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 scales: {
-                    y: { beginAtZero: true, grid: { display: false } },
-                    x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 6 } }
+                    y: { beginAtZero: true, grid: { display: true, color: 'rgba(150, 150, 150, 0.15)' } },
+                    x: { grid: { display: true, color: 'rgba(150, 150, 150, 0.15)' }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 6 } }
                 }
             }
         };

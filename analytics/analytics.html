@@ -101,192 +101,164 @@
     </div>
 
     <!-- MAIN ANALYTICS CONTENT -->
-    <main class="bento-container">
-      <div
-        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-5"
-      >
-        <div>
-          <h1 class="h3 mb-1">System Analytics</h1>
-          <p class="text-muted small mb-0">
-            Real-time performance and historical trends
-          </p>
+    <main class="web-dashboard-container">
+      <div class="dashboard-header d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-5">
+        <div class="header-titles">
+          <h1 class="h2 mb-1 fw-bold text-gradient">System Analytics</h1>
+          <p class="text-muted small mb-0">Real-time performance and historical trends for your smart irrigation system.</p>
         </div>
 
-        <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="d-flex align-items-center gap-3 flex-wrap">
           <!-- Time Range Filter -->
-          <div
-            class="btn-group bento-filter-group shadow-sm"
-            role="group"
-            aria-label="Time range filter"
-          >
-            <input
-              type="radio"
-              class="btn-check time-filter"
-              name="timeFilter"
-              id="filterAll"
-              checked
-            />
-            <label class="btn btn-outline-primary" for="filterAll">All</label>
-
-            <input
-              type="radio"
-              class="btn-check time-filter"
-              name="timeFilter"
-              id="filterDay"
-            />
-            <label class="btn btn-outline-primary" for="filterDay">Day</label>
-
-            <input
-              type="radio"
-              class="btn-check time-filter"
-              name="timeFilter"
-              id="filterWeek"
-            />
-            <label class="btn btn-outline-primary" for="filterWeek">Week</label>
-
-            <input
-              type="radio"
-              class="btn-check time-filter"
-              name="timeFilter"
-              id="filterMonth"
-            />
-            <label class="btn btn-outline-primary" for="filterMonth"
-              >Month</label
-            >
-
-            <input
-              type="radio"
-              class="btn-check time-filter"
-              name="timeFilter"
-              id="filterYear"
-            />
-            <label class="btn btn-outline-primary" for="filterYear">Year</label>
+          <div class="segmented-control glass-panel shadow-sm" role="group" aria-label="Time range filter">
+            <input type="radio" class="btn-check time-filter" name="timeFilter" id="filterAll" checked />
+            <label class="segmented-control-label" for="filterAll">All</label>
+            <input type="radio" class="btn-check time-filter" name="timeFilter" id="filterDay" />
+            <label class="segmented-control-label" for="filterDay">Day</label>
+            <input type="radio" class="btn-check time-filter" name="timeFilter" id="filterWeek" />
+            <label class="segmented-control-label" for="filterWeek">Week</label>
+            <input type="radio" class="btn-check time-filter" name="timeFilter" id="filterMonth" />
+            <label class="segmented-control-label" for="filterMonth">Month</label>
+            <input type="radio" class="btn-check time-filter" name="timeFilter" id="filterYear" />
+            <label class="segmented-control-label" for="filterYear">Year</label>
           </div>
 
           <!-- Reset Button -->
-          <button
-            id="clearAnalyticsBtn"
-            class="btn btn-outline-danger d-flex align-items-center gap-2 px-3 rounded-pill border-0"
-          >
-            <span>🗑️</span> <span class="small fw-bold">Clear</span>
+          <button id="clearAnalyticsBtn" class="btn btn-danger-soft d-flex align-items-center gap-2 px-4 rounded-pill border-0 shadow-sm">
+            <span class="icon">🗑️</span> <span class="small fw-bold">Clear Data</span>
           </button>
         </div>
       </div>
 
-      <div class="bento-grid">
-        <!-- Primary Metrics Summary -->
-        <div class="bento-col-span-3 bento-card glass-card">
-          <div class="d-flex align-items-center mb-3">
-            <span class="fs-4 me-2">💧</span>
-            <small class="bento-subtitle mb-0">Total Produced</small>
+      <!-- Dashboard Layout Grid -->
+      <div class="dashboard-grid">
+        <!-- Top Metrics Row -->
+        <div class="metric-card glass-panel premium-hover span-3">
+          <div class="metric-card-header">
+            <div class="icon-wrapper icon-blue">💧</div>
+            <span class="metric-subtitle">Total Produced</span>
           </div>
-          <div class="d-flex align-items-baseline gap-2">
-            <h2 id="totalProduced" class="fw-black display-6 mb-0">--</h2>
-            <span class="fs-6 opacity-75">Liters</span>
-          </div>
-        </div>
-
-        <div class="bento-col-span-3 bento-card glass-card">
-          <div class="d-flex align-items-center mb-3">
-            <span class="fs-4 me-2">⚡</span>
-            <small class="bento-subtitle mb-0">Pump Runtime</small>
-          </div>
-          <div class="d-flex align-items-baseline gap-2">
-            <h2 id="totalRuntime" class="fw-black display-6 mb-0">--</h2>
-            <span class="fs-6 opacity-75">Mins</span>
-          </div>
-        </div>
-
-        <div class="bento-col-span-3 bento-card glass-card">
-          <div class="d-flex align-items-center mb-3">
-            <span class="fs-4 me-2">🔄</span>
-            <small class="bento-subtitle mb-0">Total Cycles</small>
-          </div>
-          <div class="d-flex align-items-baseline gap-2">
-            <h2 id="totalCycles" class="fw-black display-6 mb-0">--</h2>
-            <span class="fs-6 opacity-75">Starts</span>
-          </div>
-        </div>
-
-        <div class="bento-col-span-3 bento-card glass-card">
-          <div class="d-flex align-items-center mb-3">
-            <span class="fs-4 me-2">📈</span>
-            <small class="bento-subtitle mb-0">Avg Efficiency</small>
-          </div>
-          <div class="d-flex align-items-baseline gap-2">
-            <h2 id="effMetric" class="fw-black display-6 mb-0">98%</h2>
-          </div>
-        </div>
-
-        <!-- Major Sensor Trends -->
-        <!-- Soil Moisture Trend -->
-        <div class="bento-col-span-6 bento-card">
-          <h5 class="bento-title mb-4 d-flex align-items-center">
-            <span class="me-2">🪴</span> Soil Moisture Trend (%)
-          </h5>
-          <div class="chart-container chart-lg">
-            <canvas id="soilChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Pump Activity Summary (Doughnut) -->
-        <div class="bento-col-span-6 bento-card">
-          <h5 class="bento-title mb-4">Pump Activity Summary</h5>
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <div class="chart-container chart-md">
-                <canvas id="activityChart"></canvas>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3">
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="small text-muted">Running Time</span>
-                  <span id="runPct" class="small fw-bold text-primary"
-                    >--%</span
-                  >
-                </div>
-                <div class="progress progress-sm mb-4">
-                  <div
-                    id="runProgress"
-                    class="progress-bar"
-                    data-width="0"
-                  ></div>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span class="small text-muted">Idle Time</span>
-                  <span id="idlePct" class="small fw-bold text-muted">--%</span>
-                </div>
-                <div class="progress progress-sm">
-                  <div
-                    id="idleProgress"
-                    class="progress-bar bg-light"
-                    data-width="0"
-                  ></div>
-                </div>
-              </div>
+          <div class="metric-card-body">
+            <div class="d-flex align-items-baseline gap-2">
+              <h2 id="totalProduced" class="fw-black display-5 mb-0 text-gradient-blue">0</h2>
+              <span class="metric-unit">Liters</span>
             </div>
           </div>
         </div>
 
-        <!-- Temperature Trend -->
-        <div class="bento-col-span-6 bento-card">
-          <h5 class="bento-title mb-4 d-flex align-items-center">
-            <span class="me-2">🌡️</span> Temperature History (°C)
-          </h5>
-          <div class="chart-container chart-lg">
-            <canvas id="tempChart"></canvas>
+        <div class="metric-card glass-panel premium-hover span-3">
+          <div class="metric-card-header">
+            <div class="icon-wrapper icon-yellow">⚡</div>
+            <span class="metric-subtitle">Pump Runtime</span>
+          </div>
+          <div class="metric-card-body">
+            <div class="d-flex align-items-baseline gap-2">
+              <h2 id="totalRuntime" class="fw-black display-5 mb-0 text-gradient-yellow">0</h2>
+              <span class="metric-unit">Mins</span>
+            </div>
           </div>
         </div>
 
-        <!-- Humidity Trend -->
-        <div class="bento-col-span-6 bento-card">
-          <h5 class="bento-title mb-4 d-flex align-items-center">
-            <span class="me-2">☁️</span> Humidity History (%)
-          </h5>
-          <div class="chart-container chart-lg">
-            <canvas id="humChart"></canvas>
+        <div class="metric-card glass-panel premium-hover span-3">
+          <div class="metric-card-header">
+            <div class="icon-wrapper icon-purple">🔄</div>
+            <span class="metric-subtitle">Total Cycles</span>
           </div>
+          <div class="metric-card-body">
+            <div class="d-flex align-items-baseline gap-2">
+              <h2 id="totalCycles" class="fw-black display-5 mb-0 text-gradient-purple">0</h2>
+              <span class="metric-unit">Starts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-card glass-panel premium-hover span-3">
+          <div class="metric-card-header">
+            <div class="icon-wrapper icon-green">📈</div>
+            <span class="metric-subtitle">Avg Efficiency</span>
+          </div>
+          <div class="metric-card-body">
+            <div class="d-flex align-items-baseline gap-2">
+              <h2 id="effMetric" class="fw-black display-5 mb-0 text-gradient-green">98%</h2>
+              <span class="metric-unit">Optimal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Featured Chart -->
+        <div class="dashboard-card glass-panel premium-hover span-8 d-flex flex-column">
+            <div class="dashboard-card-header border-bottom-soft pb-3 mb-3">
+                <h5 class="dashboard-card-title d-flex align-items-center mb-0 fw-bold">
+                    <span class="icon-wrapper-sm icon-green me-3">🪴</span> 
+                    Soil Moisture Trend (%)
+                </h5>
+            </div>
+            <div class="dashboard-card-body flex-grow-1">
+                <div class="chart-container chart-xl h-100">
+                    <canvas id="soilChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Side Details / Activity -->
+        <div class="dashboard-card glass-panel premium-hover span-4 d-flex flex-column">
+            <div class="dashboard-card-header border-bottom-soft pb-3 mb-3">
+                <h5 class="dashboard-card-title d-flex align-items-center mb-0 fw-bold">
+                    <span class="icon-wrapper-sm icon-yellow me-3">⚙️</span>
+                    Pump Activity Summary
+                </h5>
+            </div>
+            <div class="dashboard-card-body flex-grow-1 d-flex flex-column justify-content-center">
+                <div class="chart-container chart-md mb-4 mt-2">
+                    <canvas id="activityChart"></canvas>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-between mb-2">
+                    <span class="small fw-semibold text-muted">Running Time</span>
+                    <span id="runPct" class="small fw-bold text-gradient-blue">0%</span>
+                    </div>
+                    <div class="progress progress-modern mb-4">
+                    <div id="runProgress" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" data-width="0"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                    <span class="small fw-semibold text-muted">Idle Time</span>
+                    <span id="idlePct" class="small fw-bold text-muted">100%</span>
+                    </div>
+                    <div class="progress progress-modern">
+                    <div id="idleProgress" class="progress-bar progress-bar-idle" data-width="0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Temperature -->
+        <div class="dashboard-card glass-panel premium-hover span-6 d-flex flex-column">
+            <div class="dashboard-card-header border-bottom-soft pb-3 mb-3">
+                <h5 class="dashboard-card-title d-flex align-items-center mb-0 fw-bold">
+                    <span class="icon-wrapper-sm icon-orange me-3">🌡️</span>
+                    Temperature History (°C)
+                </h5>
+            </div>
+            <div class="dashboard-card-body flex-grow-1">
+                <div class="chart-container chart-lg h-100">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Humidity -->
+        <div class="dashboard-card glass-panel premium-hover span-6 d-flex flex-column">
+            <div class="dashboard-card-header border-bottom-soft pb-3 mb-3">
+                <h5 class="dashboard-card-title d-flex align-items-center mb-0 fw-bold">
+                    <span class="icon-wrapper-sm icon-blue me-3">☁️</span>
+                    Humidity History (%)
+                </h5>
+            </div>
+            <div class="dashboard-card-body flex-grow-1">
+                <div class="chart-container chart-lg h-100">
+                    <canvas id="humChart"></canvas>
+                </div>
+            </div>
         </div>
       </div>
     </main>
