@@ -65,6 +65,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0,0,0,0.75);
+            -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
             padding: 8px 16px;
             border-radius: 30px;
@@ -429,11 +430,11 @@
 
     <div class="side-menu" id="sideMenu">
         <button class="close-btn" id="closeBtn">✕</button>
-        <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
-        <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg" class="icon">Dashboard</a>
-        <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg" class="icon">Irrigation</a>
-        <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg" class="icon">Analytics</a>
-        <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg" class="icon">Settings</a>
+        <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon" alt="Home">Home</a>
+        <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg" class="icon" alt="Dashboard">Dashboard</a>
+        <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg" class="icon" alt="Irrigation">Irrigation</a>
+        <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg" class="icon" alt="Analytics">Analytics</a>
+        <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg" class="icon" alt="Settings">Settings</a>
         <div class="theme-section">
             <button class="theme-row" id="appearanceBtn">🌙 Appearance ›</button>
             <div class="theme-submenu" id="themeMenu">
@@ -465,8 +466,8 @@
         <div class="d-flex justify-content-between mt-4">
             <div class="col-lg-5 col-md-6  ">
                 <div class="bento-card h-100  w-80 text-center">
-                    <h5 class="bento-title mb-3">Water Storage  <img src="../assets/waterdrop.svg" width="22" alt=""></h5>
-                    <div class="position-relative d-inline-block" style="margin: 0 auto;">
+                    <h5 class="bento-title mb-3">Water Storage  <img src="../assets/waterdrop.svg" width="22" alt="Water tank" /></h5>
+                    <div class="position-relative d-inline-block tank-container">
                         <div class="tank-3d">
                             <div class="bubbles-container">
                                 <div class="bubble-item"></div>
@@ -476,18 +477,18 @@
                                 <div class="bubble-item"></div>
                                 <div class="bubble-item"></div>
                             </div>
-                            <div id="tankLevelFill" class="water-fill" style="height: 0%;">
+                            <div id="tankLevelFill" class="water-fill tank-fill" data-level="0">
                                 <div class="water-wave-animation"></div>
                                 <div class="water-wave-animation wave-2"></div>
                                 <div class="water-wave-animation wave-3"></div>
                             </div>
                             <div id="tankLevelPercent" class="tank-percent-label">0%</div>
                             <div class="tank-scale-markers">
-                                <div class="tick-marker" style="bottom: 3%"><span>0%</span></div>
-                                <div class="tick-marker" style="bottom: 25%"><span>25%</span></div>
-                                <div class="tick-marker" style="bottom: 50%"><span>50%</span></div>
-                                <div class="tick-marker" style="bottom: 75%"><span>75%</span></div>
-                                <div class="tick-marker" style="bottom: 97%"><span>100%</span></div>
+                                <div class="tick-marker" data-position="3"><span>0%</span></div>
+                                <div class="tick-marker" data-position="25"><span>25%</span></div>
+                                <div class="tick-marker" data-position="50"><span>50%</span></div>
+                                <div class="tick-marker" data-position="75"><span>75%</span></div>
+                                <div class="tick-marker" data-position="97"><span>100%</span></div>
                             </div>
                         </div>
                         <div class="tank-base-shadow"></div>
@@ -532,8 +533,8 @@
                             <i class="fas fa-faucet fa-2x mb-2"></i>
                             <h6>Pump Status</h6>
                             <h3 id="pumpStatusText" class="fw-bold mb-0">OFF</h3>
-                            <label class="switch mt-2">
-                                <input type="checkbox" id="pumpToggle">
+                            <label class="switch mt-2" for="pumpToggle">
+                                <input type="checkbox" id="pumpToggle" title="Toggle pump">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -542,10 +543,7 @@
             </div>
         </div>
 
-
         <div class="bento-card mb-4 mt-4 background-color-white">
-        
-            
             <div class="row mt-4 g-3">
                 <div class="col-md-3">
                     <div class="p-3  rounded text-center ">
@@ -583,7 +581,7 @@
             <div class="col-lg-6 col-md-12" >
                 <div class="bento-card h-100 p-3">
                     <h5 class="bento-title mb-3"><i class="fas fa-bell text-warning"></i> Active Alerts</h5>
-                    <div id="alertsContainer" style="max-height: 280px; overflow-y: auto;"></div>
+                    <div id="alertsContainer" class="alerts-container"></div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -617,10 +615,10 @@
             </div>
         </div>
         <div class="suggestions">
-            <button onclick="quickAsk('Soil moisture level?')" style="color: #1f2937;">🌱 Soil Health</button>
-            <button onclick="quickAsk('Should I water?')" style="color: #1f2937;">🚰 Watering</button>
-            <button onclick="quickAsk('Water level?')" style="color: #1f2937;">💧 Tank Level</button>
-            <button onclick="quickAsk('Weather forecast?')" style="color: #1f2937;">🌤️ Weather</button>
+            <button onclick="quickAsk('Soil moisture level?')" class="quick-ask-btn">🌱 Soil Health</button>
+            <button onclick="quickAsk('Should I water?')" class="quick-ask-btn">🚰 Watering</button>
+            <button onclick="quickAsk('Water level?')" class="quick-ask-btn">💧 Tank Level</button>
+            <button onclick="quickAsk('Weather forecast?')" class="quick-ask-btn">🌤️ Weather</button>
         </div>
         <div class="chat-input">
             <input id="userInput" placeholder="Ask me anything...">

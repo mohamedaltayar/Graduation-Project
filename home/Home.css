@@ -31,7 +31,6 @@ body {
   transition:
     background 0.3s,
     color 0.3s;
-
 }
 
 .app-banner {
@@ -43,7 +42,6 @@ body {
   padding: 10px;
 }
 
-
 .header {
   position: sticky;
   height: 70px;
@@ -54,7 +52,6 @@ body {
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
-
 
 .app-banner img {
   width: 40px;
@@ -106,8 +103,6 @@ body {
 .logo .brand {
   color: #ffe44d;
 }
-
-
 
 .nav a {
   margin-left: 15px;
@@ -223,7 +218,6 @@ body.dark .left h1 {
   object-fit: cover;
 }
 
-
 .image-wrap::before {
   content: "";
   position: absolute;
@@ -270,7 +264,6 @@ body.dark .left h1 {
   background: var(--bg-color);
 }
 
-
 .feature-card {
   perspective: 1000px;
   min-height: 400px;
@@ -280,7 +273,7 @@ body.dark .left h1 {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform .8s;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
@@ -376,7 +369,6 @@ body.dark .features-intro h2 {
   transform: translateY(0);
 }
 
-
 .SWG-section {
   display: flex;
   align-items: center;
@@ -384,8 +376,6 @@ body.dark .features-intro h2 {
   padding: 120px 8%;
   gap: 60px;
 }
-
-
 
 .SWG-images {
   position: relative;
@@ -401,7 +391,7 @@ body.dark .features-intro h2 {
   height: 340px;
   object-fit: cover;
   border-radius: 20px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .img-front {
@@ -412,10 +402,8 @@ body.dark .features-intro h2 {
   height: 380px;
   object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
-
-
 
 .SWG-content {
   max-width: 520px;
@@ -433,12 +421,10 @@ body.dark .SWG-content h2 {
 
 .SWG-content p {
   margin: 20px 0 30px;
-  opacity: .85;
+  opacity: 0.85;
   font-size: 20px;
   line-height: 1.7;
 }
-
-
 
 .SWG-features {
   display: grid;
@@ -485,7 +471,7 @@ body.dark .testimonials h2 {
 
 .testimonials .sub {
   margin: 10px 0 50px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .testimonial-wrapper {
@@ -503,7 +489,7 @@ body.dark .testimonials h2 {
   border-radius: 24px;
   border: 1px solid var(--border-color);
   box-shadow: #1b1b1b 0px 10px 30px -10px;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .quote {
@@ -530,7 +516,7 @@ body.dark .testimonials h2 {
 .author div {
   display: block;
   font-size: 14px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .arrow {
@@ -540,7 +526,7 @@ body.dark .testimonials h2 {
   font-size: 28px;
   cursor: pointer;
   color: var(--accent);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .arrow:hover {
@@ -554,7 +540,6 @@ body.dark .testimonials h2 {
   padding: 40px 8%;
   margin-top: 50px;
   margin-bottom: 100px;
-
 }
 
 .dash-card {
@@ -563,11 +548,10 @@ body.dark .testimonials h2 {
   border-radius: 16px;
   padding: 25px;
   text-align: left;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
-  transition: .3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
   width: 100%;
   height: 100%;
-
 }
 
 .dash-card:hover {
@@ -592,7 +576,7 @@ body.dark .dash-card h3 {
 
 .dash-card p {
   font-size: 14px;
-  opacity: .85;
+  opacity: 0.85;
   margin-bottom: 18px;
 }
 
@@ -622,7 +606,7 @@ body.dark .dash-card button {
 }
 
 .sub {
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 30px;
 }
 
@@ -633,10 +617,7 @@ body.dark .dash-card button {
   justify-content: center;
   width: fit-content;
   margin: auto;
-
 }
-
-
 
 .tank {
   flex-shrink: 0;
@@ -649,8 +630,6 @@ body.dark .dash-card button {
   border: 3px solid #aaa;
 }
 
-
-
 .scale {
   position: absolute;
   inset: 0;
@@ -658,7 +637,6 @@ body.dark .dash-card button {
   font-size: 12px;
   padding: 10px;
 }
-
 
 .tick {
   position: absolute;
@@ -669,7 +647,6 @@ body.dark .dash-card button {
   transform: translateY(50%);
 }
 
-
 .tick span {
   position: absolute;
   left: 35px;
@@ -678,39 +655,40 @@ body.dark .dash-card button {
   color: var(--header-bg);
 }
 
-
-
-.water{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:60%;
-  background:#5b78b5;
-  overflow:hidden;
-  transition:height 1s ease;
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: #5b78b5;
+  overflow: hidden;
+  transition: height 1s ease;
 }
 
-
-.water-top{
-  position:absolute;
-  top:-12px;
-  left:0;
-  width:200%;
-  height:25px;
-  background:linear-gradient(
+.water-top {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 200%;
+  height: 25px;
+  background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(255,255,255,0.4) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     transparent 100%
   );
-  border-radius:50%;
+  border-radius: 50%;
   animation: moveLine 4s linear infinite;
-  opacity:.6;
+  opacity: 0.6;
 }
 
-@keyframes moveLine{
-  from{ transform:translateX(0); }
-  to{ transform:translateX(-50%); }
+@keyframes moveLine {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .label {
@@ -725,8 +703,6 @@ body.dark .dash-card button {
   z-index: 5;
   color: var(--header-bg);
 }
-
-
 
 .water-stats {
   display: grid;
@@ -744,7 +720,6 @@ body.dark .dash-card button {
   border-radius: 12px;
   border: 1px solid var(--border-color);
   margin-top: 50px;
-
 }
 
 .stat h4 {
@@ -756,7 +731,6 @@ body.dark .dash-card button {
   grid-column: span 2;
   margin-top: 0%;
 }
-
 
 .extra-stats {
   margin: 40px;
@@ -773,8 +747,7 @@ body.dark .dash-card button {
   display: flex;
   gap: 14px;
   align-items: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
-
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .extra-card .icon {
@@ -789,18 +762,16 @@ body.dark .dash-card button {
 
 .extra-card h4 {
   font-size: 18px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .extra-card strong {
   font-size: 18px;
 }
 
-
-
 .bar {
   height: 6px;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   margin-top: 6px;
   overflow: hidden;
@@ -811,9 +782,6 @@ body.dark .dash-card button {
   height: 100%;
   background: #4ade80;
 }
-
-
-
 
 .impact-section {
   display: flex;
@@ -837,7 +805,8 @@ body.dark .dash-card button {
 
 .impact-card span {
   font-size: 18px;
-  font-weight: 500;}
+  font-weight: 500;
+}
 
 .impact-row {
   display: flex;
@@ -859,12 +828,9 @@ body.dark .dash-card button {
 
 .blue {
   color: #2563eb;
-    font-size: 18px;
+  font-size: 18px;
   font-weight: 600;
 }
-
-
-
 
 .contact-section {
   display: flex;
@@ -872,8 +838,6 @@ body.dark .dash-card button {
   padding: 100px 8%;
   align-items: stretch;
 }
-
-
 
 .contact-image {
   flex: 1;
@@ -886,7 +850,6 @@ body.dark .dash-card button {
   height: 100%;
   object-fit: cover;
 }
-
 
 .contact-form {
   flex: 1;
@@ -917,7 +880,7 @@ body.dark .dash-card button {
 .field label {
   font-size: 16px;
   margin-bottom: 6px;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .field input,
@@ -955,14 +918,14 @@ body.dark .field textarea {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .contact-form button:hover {
   background: var(--accent);
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .menu-btn {
     order: 1;
   }
@@ -977,8 +940,8 @@ body.dark .field textarea {
     order: 3;
   }
   .nav {
-     order: 4;
-    }
+    order: 4;
+  }
 
   .hero {
     flex-direction: column;
@@ -1040,30 +1003,29 @@ body.dark .field textarea {
     grid-template-columns: 1fr;
   }
 
-  .testimonials{
-    padding:60px 5%;
+  .testimonials {
+    padding: 60px 5%;
   }
 
-  .testimonial-wrapper{
-    width:100%;
+  .testimonial-wrapper {
+    width: 100%;
   }
 
-  .testimonial-card{
-    width:100%;
-    max-width:100%;
-    min-height:auto;
-    padding:30px 20px;
+  .testimonial-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    padding: 30px 20px;
   }
   .arrow {
-  background: none;
-  width: 12px;
-  height: 12px;
-  font-size: 20px;}
-
+    background: none;
+    width: 12px;
+    height: 12px;
+    font-size: 20px;
+  }
 }
 
-@media (min-width:768px) and (max-width:1023px) {
-
+@media (min-width: 768px) and (max-width: 1023px) {
   .menu-btn {
     order: 1;
   }
@@ -1078,9 +1040,9 @@ body.dark .field textarea {
     order: 3;
   }
   .nav {
-     order: 4;
-    display:none;
-    }
+    order: 4;
+    display: none;
+  }
 
   .hero {
     flex-direction: column;
@@ -1117,19 +1079,17 @@ body.dark .field textarea {
   .pages-cards {
     grid-template-columns: 1fr 1fr;
   }
-   .tank-section {
+  .tank-section {
     flex-direction: column;
     align-items: center;
-   }
-   
+  }
+
   .water-stats {
     width: 100%;
   }
-
 }
 
-@media (min-width:1024px) and (max-width:1279px) {
-
+@media (min-width: 1024px) and (max-width: 1279px) {
   .features {
     grid-template-columns: 1fr 1fr;
   }
@@ -1137,5 +1097,44 @@ body.dark .field textarea {
   .pages-cards {
     grid-template-columns: 1fr 1fr;
   }
+}
 
+/* Dynamic width and positioning styles */
+.bar-fill {
+  width: 68%;
+  height: 100%;
+  background: currentColor;
+}
+
+.bar-fill[data-width="68"] {
+  width: 68%;
+}
+
+.bar-fill[data-width="94"] {
+  width: 94%;
+}
+
+.tick[data-position="3"] {
+  bottom: 3%;
+}
+
+.tick[data-position="25"] {
+  bottom: 25%;
+}
+
+.tick[data-position="50"] {
+  bottom: 50%;
+}
+
+.tick[data-position="75"] {
+  bottom: 75%;
+}
+
+.tick[data-position="97"] {
+  bottom: 97%;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
 }

@@ -206,3 +206,41 @@ body{
     margin:5px;
     }
  
+/* New styles for accessibility fixes */
+.tank-container {
+  margin: 0 auto;
+}
+
+.tank-fill {
+  height: 0%;
+  transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tick-marker[data-position="3"] {
+  bottom: 3%;
+}
+
+.tick-marker[data-position="25"] {
+  bottom: 25%;
+}
+
+.tick-marker[data-position="50"] {
+  bottom: 50%;
+}
+
+.tick-marker[data-position="75"] {
+  bottom: 75%;
+}
+
+.tick-marker[data-position="97"] {
+  bottom: 97%;
+}
+
+.alerts-container {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.quick-ask-btn {
+  color: #1f2937;
+}
