@@ -161,3 +161,33 @@ card.addEventListener("touchend", (e) => {
     prevTestimonial(); // swipe right
   }
 });
+
+
+/* =====================================
+   SUBMENU JS
+===================================== */
+
+const analyticsBtn   = document.getElementById("analyticsBtn");
+const analyticsMenu  = document.getElementById("analyticsMenu");
+const analyticsArrow = document.getElementById("analyticsArrow");
+
+analyticsBtn.addEventListener("click", function(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  analyticsMenu.classList.toggle("show");
+  analyticsArrow.classList.toggle("rotate");
+});
+
+/* يقفل لو ضغط برا */
+document.addEventListener("click", function(e){
+
+  if(
+    !analyticsBtn.contains(e.target) &&
+    !analyticsMenu.contains(e.target)
+  ){
+    analyticsMenu.classList.remove("show");
+    analyticsArrow.classList.remove("rotate");
+  }
+
+});

@@ -195,60 +195,7 @@ body.dark .soil-meter {
     transition: width 0.5s ease;
 }
 
-/* Alerts */
-.alert-item {
-    padding: 12px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 12px;
-    animation: slideIn 0.3s ease;
-}
 
-.alert-critical {
-    background: #fee2e2;
-    border-left: 4px solid #ef4444;
-}
-
-.alert-warning {
-    background: #fff3e0;
-    border-left: 4px solid #f59e0b;
-}
-
-.alert-success {
-    background: #e8f5e9;
-    border-left: 4px solid #4caf50;
-}
-
-body.dark .alert-critical {
-    background: #7f1d1d;
-    border-left-color: #ef4444;
-    color: #fecaca;
-}
-
-body.dark .alert-warning {
-    background: #78350f;
-    border-left-color: #f59e0b;
-    color: #fed7aa;
-}
-
-body.dark .alert-success {
-    background: #064e3b;
-    border-left-color: #10b981;
-    color: #d1fae5;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 /* Chatbot */
 #chatIcon {

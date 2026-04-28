@@ -7,18 +7,20 @@
   font-family: "Inter", sans-serif;
 }
 
-
+/* الوضع العادي (Light) */
 body{
   background: #ffffff;
-  color: var(--text);
+  color: #111;
     font-family: 'inter', sans-serif;
 }
 
-
-body.dark{
+/* Dark Mode تلقائي */
+@media (prefers-color-scheme: dark){
+  body{
     background: #0a0e14;
     color: #f1f3fc;
       font-family: 'inter', sans-serif;
+  }
 }
 .header {
     display: flex;
@@ -135,8 +137,10 @@ html{
 }
 
 /* Dark */
-body.dark .feature{
+@media (prefers-color-scheme: dark){
+  .feature{
     background: rgba(255,255,255,0.05);
+  }
 }
 .features h2{
   font-size:40px;
@@ -222,14 +226,3 @@ body.dark .feature{
   }
 
 }
-/* Global Dark Mode Text Overrides */
-body.dark .text-dark {
-    color: var(--text) !important;
-}
-body.dark .text-muted {
-    color: #94a3b8 !important;
-}
-body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
-    color: var(--text);
-}
-

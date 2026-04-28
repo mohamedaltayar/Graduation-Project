@@ -16,88 +16,105 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
-        (function(){if(!localStorage.getItem("hydroUser"))window.location.replace("../landing/landing.html");})();
+        (function () { if (!localStorage.getItem("hydroUser")) window.location.replace("../landing/landing.html"); })();
     </script>
 </head>
 
 <body>
     <!-- HEADER -->
-   <header class="header">
-    <nav class="main-nav">
-    <div class="nav-left">
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    <a href="../home/Home.html" class="logo">
-      <img src="../assets/water-drop-rain-drink 1.svg" alt="" class="icon">
-   <span class="logo">HydroGyn</span>
-    <span class="divider"></span>
-      </a>
+    <header class="header">
+        <nav class="main-nav">
+            <div class="nav-left">
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+                <a href="../home/Home.html" class="logo">
+                    <img src="../assets/water-drop-rain-drink 1.svg" alt="" class="icon">
+                    <span class="logo">HydroGyn</span>
+                    <span class="divider"></span>
+                </a>
 
-            <div class="nav-links">
-      <a href="../dashboard/dashboard.html">Dashboard</a>
-      <a href="../irrigation/irrigation.html">Irrigation</a>
-      <a href="../analytics/analytics.html">Analytics</a>
-      <a href="../settings/settings.html">Settings</a>
-      </div>
-    </nav>
+                <div class="nav-links">
+                    <a href="../dashboard/dashboard.html">Dashboard</a>
+                    <a href="../irrigation/irrigation.html">Irrigation</a>
+                    <div class="nav-dropdown">
 
-    </div>
-    <div class="nav-right">
+                        <button class="analytics-trigger" id="analyticsBtn">
+                            Analytics
+                            <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span></span>
+                        </button>
 
-    <!-- Notification Bell -->
-    <div class="notification-wrapper">
-      <i class="fas fa-bell notification-icon" id="notifToggle"></i>
-      <span class="notif-badge" id="notifBadge"></span>
-      <div class="notification-dropdown">
-        <div class="bento-card">
-          <h6>Active Alerts</h6>
-          <div id="alertsContainer"></div>
+                        <div class="nav-submenu" id="analyticsMenu">
+                            <a href="../analytics/analytics.html">Analysis</a>
+                            <a href="../analytics/analytics.html#reports">Reports</a>
+                        </div> 
+                    </div>
+                        <a href="../settings/settings.html">Settings</a>
+                    </div>
+        </nav>
+
         </div>
-      </div>
-    </div>
+        <div class="nav-right">
 
-    <div class="profile-menu">
+            <!-- Notification Bell -->
+            <div class="notification-wrapper">
+                <i class="fas fa-bell notification-icon" id="notifToggle"></i>
+                <span class="notif-badge" id="notifBadge"></span>
+                <div class="notification-dropdown">
+                    <div class="bento-card">
+                        <h6>Active Alerts</h6>
+                        <div id="alertsContainer"></div>
+                    </div>
+                </div>
+            </div>
 
-      <button class="profile-btn" id="profileBtn">
-        <img src="../assets/Vector.svg" alt="profile">
-      </button>
+            <div class="profile-menu">
 
-      <div class="profile-dropdown" id="profileDropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <img src="../assets/Vector.svg" alt="profile">
+                </button>
 
-        <div class="profile-header">
-          <div class="avatar">U</div>
-          <div class="user-info">
-            <strong id="username">User Name</strong>
-            <p id="email">email@example.com</p>
-          </div>
+                <div class="profile-dropdown" id="profileDropdown">
+
+                    <div class="profile-header">
+                        <div class="avatar">U</div>
+                        <div class="user-info">
+                            <strong id="username">User Name</strong>
+                            <p id="email">email@example.com</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch
+                        account</button>
+
+                    <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">
+                        Logout
+                    </button>
+
+                    <div class="theme-section">
+                        <button class="theme-row" id="appearanceBtn">
+                            🌙 Appearance ›
+                        </button>
+
+                        <div class="theme-submenu" id="themeMenu">
+                            <button data-theme="system">Use device theme</button>
+                            <button data-theme="dark">Dark theme</button>
+                            <button data-theme="light">Light theme</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-         
-        <hr>
-
-        <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
-        
-        <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">
-          Logout
-        </button>
-
-              <div class="theme-section">
-      <button class="theme-row" id="appearanceBtn">
-        🌙 Appearance ›
-      </button>
-
-      <div class="theme-submenu" id="themeMenu">
-        <button data-theme="system">Use device theme</button>
-        <button data-theme="dark">Dark theme</button>
-        <button data-theme="light">Light theme</button>
-      </div>
-
-    </div>
-
-      </div>
-
-    </div>
-    </div>
-    </div>
-  </header>
+        </div>
+    </header>
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- SIDEBAR -->
@@ -183,7 +200,8 @@
 
             <div class="bento-col-span-3 bento-card glass-card animate-fade-in" style="animation-delay: 0.3s;">
                 <div class="d-flex align-items-center mb-4">
-                    <div class="icon-box bg-info-subtle text-info me-3" style="background-color: #e0e7ff !important; color: #4f46e5 !important;">
+                    <div class="icon-box bg-info-subtle text-info me-3"
+                        style="background-color: #e0e7ff !important; color: #4f46e5 !important;">
                         <span class="fs-5">🔄</span>
                     </div>
                     <small class="bento-subtitle text-uppercase text-muted fw-bold mb-0">Total Cycles</small>
@@ -226,11 +244,13 @@
                             <div class="analysis-item p-3 rounded-3 h-100" style="background: #f0fdf4;">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="analysis-badge bg-success text-white me-2">✅</span>
-                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Optimal Zones</span>
+                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Optimal
+                                        Zones</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-baseline">
                                     <h4 id="soilOptimalZones" class="fw-black mb-0 text-success fs-5">--</h4>
-                                    <span id="soilHealthPct" class="small fw-bold text-success" style="font-size: 0.75rem;">--</span>
+                                    <span id="soilHealthPct" class="small fw-bold text-success"
+                                        style="font-size: 0.75rem;">--</span>
                                 </div>
                             </div>
                         </div>
@@ -238,11 +258,13 @@
                             <div class="analysis-item p-3 rounded-3 h-100" style="background: #eff6ff;">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="analysis-badge bg-primary text-white me-2">💧</span>
-                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Avg Moisture</span>
+                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Avg
+                                        Moisture</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-baseline">
                                     <h4 id="soilAvgMoisture" class="fw-black mb-0 text-primary fs-5">--%</h4>
-                                    <span class="small fw-semibold text-muted" style="font-size: 0.75rem;">All zones</span>
+                                    <span class="small fw-semibold text-muted" style="font-size: 0.75rem;">All
+                                        zones</span>
                                 </div>
                             </div>
                         </div>
@@ -250,11 +272,13 @@
                             <div class="analysis-item p-3 rounded-3 h-100" style="background: #fef2f2;">
                                 <div class="d-flex align-items-center mb-2">
                                     <span class="analysis-badge bg-danger text-white me-2">⚠️</span>
-                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Needs Attention</span>
+                                    <span class="small fw-bold text-muted" style="font-size: 0.8rem;">Needs
+                                        Attention</span>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-baseline">
                                     <h4 id="soilAttentionCount" class="fw-black mb-0 text-danger fs-5">--</h4>
-                                    <span id="soilAttentionZone" class="small fw-semibold text-muted" style="font-size: 0.75rem;">--</span>
+                                    <span id="soilAttentionZone" class="small fw-semibold text-muted"
+                                        style="font-size: 0.75rem;">--</span>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +337,9 @@
                         <span id="tempCurrent" class="small fw-bold" style="color: #f97316;">--°C</span>
                     </div>
                     <div class="progress mb-3" style="height: 6px; background-color: #f1f5f9; border-radius: 3px;">
-                        <div id="tempProgressBar" class="progress-bar" style="width: 0%; background: linear-gradient(90deg, #22c55e, #f97316, #ef4444); border-radius: 3px;"></div>
+                        <div id="tempProgressBar" class="progress-bar"
+                            style="width: 0%; background: linear-gradient(90deg, #22c55e, #f97316, #ef4444); border-radius: 3px;">
+                        </div>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="small text-muted">Average (7 days)</span>
@@ -350,7 +376,9 @@
                         <span id="humCurrent" class="small fw-bold text-primary">--%</span>
                     </div>
                     <div class="progress mb-3" style="height: 6px; background-color: #f1f5f9; border-radius: 3px;">
-                        <div id="humProgressBar" class="progress-bar" style="width: 0%; background: linear-gradient(90deg, #3b82f6, #0ea5e9); border-radius: 3px;"></div>
+                        <div id="humProgressBar" class="progress-bar"
+                            style="width: 0%; background: linear-gradient(90deg, #3b82f6, #0ea5e9); border-radius: 3px;">
+                        </div>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="small text-muted">Average (7 days)</span>
@@ -386,54 +414,55 @@
         </div>
     </div>
 
-      <footer class="footer">
-    <div class="footer-grid">
+    <footer class="footer">
+        <div class="footer-grid">
 
-      <div>
-        <h3>HydroGen</h3>
-        <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
-      </div>
+            <div>
+                <h3>HydroGen</h3>
+                <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
+            </div>
 
-      <div>
-        <h4>Platform</h4>
-        <a href="../dashboard/dashboard.html">Dashboard</a>
-        <a href="../irrigation/irrigation.html">Irrigation</a>
-        <a href="../analytics/analytics.html">Analytics</a>
-      </div>
+            <div>
+                <h4>Platform</h4>
+                <a href="../dashboard/dashboard.html">Dashboard</a>
+                <a href="../irrigation/irrigation.html">Irrigation</a>
+                <a href="../analytics/analytics.html">Analytics</a>
+            </div>
 
-      <div>
-        <h4>Company</h4>
-        <a href="../about/about.html">About</a>
-        <a href="../services/services.html">Services</a>
-        <a href="../our story/our_story.html">our story</a>
-          </div>
+            <div>
+                <h4>Company</h4>
+                <a href="../about/about.html">About</a>
+                <a href="../services/services.html">Services</a>
+                <a href="../our story/our_story.html">our story</a>
+            </div>
 
-      <div>
-        <h4>Contact</h4>
-        <a href="https://wa.me/201005339569?text=Hello%20I%20want%20to%20ask%20about%20the%20app" target="_blank">
+            <div>
+                <h4>Contact</h4>
+                <a href="https://wa.me/201005339569?text=Hello%20I%20want%20to%20ask%20about%20the%20app"
+                    target="_blank">
 
-          <img src="../assets/whatsapp.svg" alt="" style="width: 20px; height: 20px;">
-          Chat on WhatsApp
-        </a>
-        <a href="tel:+201005339569">
-          <img src="../assets/call.svg" alt="" style="width: 20px; height: 20px; ">
-          call
-        </a>
-        <a href="mailto:info@hydrogen.com">
-          <img src="../assets/email.svg" alt="" style="width: 20px; height: 20px;">
-          send email
-        </a>
-        <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank">
-          <img src="../assets/location.svg" alt="" style="width: 20px; height: 20px; ">
-          visit us</a>
-      </div>
+                    <img src="../assets/whatsapp.svg" alt="" style="width: 20px; height: 20px;">
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:+201005339569">
+                    <img src="../assets/call.svg" alt="" style="width: 20px; height: 20px; ">
+                    call
+                </a>
+                <a href="mailto:info@hydrogen.com">
+                    <img src="../assets/email.svg" alt="" style="width: 20px; height: 20px;">
+                    send email
+                </a>
+                <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank">
+                    <img src="../assets/location.svg" alt="" style="width: 20px; height: 20px; ">
+                    visit us</a>
+            </div>
 
-    </div>
+        </div>
 
-    <div class="footer-bottom">
-      © 2026 HydroGen — All rights reserved.
-    </div>
-  </footer>
+        <div class="footer-bottom">
+            © 2026 HydroGen — All rights reserved.
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../theme/theme.js"></script>
     <!-- Analytics Logic -->
@@ -444,7 +473,7 @@
     <!-- Firebase Config & Logic -->
     <script src="../firebase/firebase-config.js"></script>
     <script src="analytics.js"></script>
-    
+
 </body>
 
 </html>

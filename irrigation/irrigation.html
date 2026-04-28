@@ -17,7 +17,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-        (function(){if(!localStorage.getItem("hydroUser"))window.location.replace("../landing/landing.html");})();
+        (function () { if (!localStorage.getItem("hydroUser")) window.location.replace("../landing/landing.html"); })();
     </script>
 </head>
 
@@ -34,60 +34,73 @@
                 <div class="nav-links">
                     <a href="../dashboard/dashboard.html">Dashboard</a>
                     <a href="../irrigation/irrigation.html">Irrigation</a>
-                    <a href="../analytics/analytics.html">Analytics</a>
-                    <a href="../settings/settings.html">Settings</a>
-                </div>
-            </div>
-        </nav>
+                    <div class="nav-dropdown">
 
-        <div class="nav-right">
-            <div class="notification-wrapper">
-                <i class="fas fa-bell notification-icon" id="notifToggle"></i>
-                <span class="notif-badge" id="notifBadge">0</span>
-                <div class="notification-dropdown">
-                    <div class="bento-card">
-                        <h6>Active Alerts</h6>
-                        <div id="alertsContainer"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="profile-menu">
-                <button class="profile-btn" id="profileBtn">
-                    <img src="../assets/Vector.svg" id="profileImage" alt="profile">
-                </button>
-                <div class="profile-dropdown" id="profileDropdown">
-                    <div class="profile-header">
-                        <div class="avatar">U</div>
-                        <div class="user-info">
-                            <strong id="username">User Name</strong>
-                            <p id="email">email@example.com</p>
+                        <button class="analytics-trigger" id="analyticsBtn">
+                            Analytics
+                            <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span></span>
+                        </button>
+
+                        <div class="nav-submenu" id="analyticsMenu">
+                            <a href="../analytics/analytics.html">Analysis</a>
+                            <a href="../analytics/analytics.html#reports">Reports</a>
                         </div>
                     </div>
-
-                    <hr>
-
-                    <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch
-                        account</button>
-                    
-                    <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt=""
-                            class="icon">Log
-                        out</button>
-                                    <div class="theme-section">
-      <button class="theme-row" id="appearanceBtn">
-        🌙 Appearance ›
-      </button>
-
-      <div class="theme-submenu" id="themeMenu">
-        <button data-theme="system">Use device theme</button>
-        <button data-theme="dark">Dark theme</button>
-        <button data-theme="light">Light theme</button>
-      </div>
-
-    </div>
-
+                        <a href="../settings/settings.html">Settings</a>
+                    </div>
                 </div>
-            </div>
+        </nav>
+
+    <div class="nav-right">
+      <div class="notification-wrapper">
+        <i class="fas fa-bell notification-icon" id="notifToggle"></i>
+        <span class="notif-badge" id="notifBadge"></span>
+        <div class="notification-dropdown">
+          <div class="bento-card">
+            <h6>Active Alerts</h6>
+            <div id="alertsContainer"></div>
+          </div>
         </div>
+      </div>
+      <div class="profile-menu">
+        <button class="profile-btn" id="profileBtn">
+          <img src="../assets/Vector.svg" id="profileImage" alt="profile">
+        </button>
+        <div class="profile-dropdown" id="profileDropdown">
+          <div class="profile-header">
+            <div class="avatar">U</div>
+            <div class="user-info">
+              <strong id="username">User Name</strong>
+              <p id="email">email@example.com</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
+
+          <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
+            out</button>
+          <div class="theme-section">
+            <button class="theme-row" id="appearanceBtn">
+              🌙 Appearance ›
+            </button>
+
+            <div class="theme-submenu" id="themeMenu">
+              <button data-theme="system">Use device theme</button>
+              <button data-theme="dark">Dark theme</button>
+              <button data-theme="light">Light theme</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
     </header>
 
     <div class="menu-overlay" id="menuOverlay"></div>
@@ -581,64 +594,64 @@
         </div>
     </div>
 
-            <footer class="footer">
-            <div class="footer-grid">
+    <footer class="footer">
+        <div class="footer-grid">
 
-                <div>
-                    <h3>HydroGen</h3>
-                    <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
-                </div>
+            <div>
+                <h3>HydroGen</h3>
+                <p>Smart irrigation platform powered by AI to save water and grow healthier crops.</p>
+            </div>
 
-                <div>
-                    <h4>Platform</h4>
-                    <a href="../dashboard/dashboard.html">Dashboard</a>
-                    <a href="../irrigation/irrigation.html">Irrigation</a>
-                    <a href="../analytics/analytics.html">Analytics</a>
-                </div>
+            <div>
+                <h4>Platform</h4>
+                <a href="../dashboard/dashboard.html">Dashboard</a>
+                <a href="../irrigation/irrigation.html">Irrigation</a>
+                <a href="../analytics/analytics.html">Analytics</a>
+            </div>
 
-                <div>
-                    <h4>Company</h4>
-                    <a href="../about/about.html">About</a>
-                    <a href="../services/services.html">Services</a>
-                    <a href="../our story/our_story.html">our story</a>
-
-                </div>
-
-                <div>
-                    <h4>Contact</h4>
-                    <a href="https://wa.me/201005339569?text=Hello%20I%20want%20to%20ask%20about%20the%20app"
-                        target="_blank">
-
-                        <img src="../assets/whatsapp.svg" alt="" style="width: 20px; height: 20px;">
-                        Chat on WhatsApp
-                    </a>
-                    <a href="tel:+201005339569">
-                        <img src="../assets/call.svg" alt="" style="width: 20px; height: 20px; ">
-                        call
-                    </a>
-                    <a href="mailto:info@hydrogen.com">
-                        <img src="../assets/email.svg" alt="" style="width: 20px; height: 20px;">
-                        send email
-                    </a>
-                    <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank">
-                        <img src="../assets/location.svg" alt="" style="width: 20px; height: 20px; ">
-                        visit us</a>
-                </div>
+            <div>
+                <h4>Company</h4>
+                <a href="../about/about.html">About</a>
+                <a href="../services/services.html">Services</a>
+                <a href="../our story/our_story.html">our story</a>
 
             </div>
 
-            <div class="footer-bottom">
-                © 2026 HydroGen — All rights reserved.
-            </div>
-        </footer>
+            <div>
+                <h4>Contact</h4>
+                <a href="https://wa.me/201005339569?text=Hello%20I%20want%20to%20ask%20about%20the%20app"
+                    target="_blank">
 
-        
-        <script src="../theme/theme.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+                    <img src="../assets/whatsapp.svg" alt="" style="width: 20px; height: 20px;">
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:+201005339569">
+                    <img src="../assets/call.svg" alt="" style="width: 20px; height: 20px; ">
+                    call
+                </a>
+                <a href="mailto:info@hydrogen.com">
+                    <img src="../assets/email.svg" alt="" style="width: 20px; height: 20px;">
+                    send email
+                </a>
+                <a href="https://maps.google.com/?q=Cairo,Egypt" target="_blank">
+                    <img src="../assets/location.svg" alt="" style="width: 20px; height: 20px; ">
+                    visit us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 HydroGen — All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="../theme/theme.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
-        <script src="../firebase/firebase-config.js"></script>
-        <script src="irrigation.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="../firebase/firebase-config.js"></script>
+    <script src="irrigation.js"></script>
 </body>
 
 </html>

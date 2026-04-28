@@ -1,9 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --bg-color: #fbfdf7;
+  --text-color: var(--text);
+  --card-bg: #ffffff;
+  --header-bg: #06420d;
+  --border-color: #e5e5e5;
+  --accent: #9bbf73;
+}
+
+body.dark {
+  --bg-color: #0f172a;
+  --text-color: #e5e7eb;
+  --card-bg: #1e293b;
+  --header-bg: #020617;
+  --border-color: #334155;
+  --accent: #7dd3a6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text);
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+}
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding: 80px 70px;
-  background: var(--bg-color);
+  margin-bottom: 200px;
+  background: transparent;
 }
 
 
@@ -46,6 +82,22 @@
   text-align: center;
   box-shadow: #414040 0px 10px 30px -10px;
 }
+body.dark .card-front,
+body.dark .card-back {
+  position: absolute;
+  inset: 0;
+  background: var(--header-bg);
+  border-color: #a1a0a0;
+  border-radius: 20px;
+  padding: 30px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: #414040 0px 10px 30px -10px;
+}
 
 .card-back {
   transform: rotateY(180deg);
@@ -77,6 +129,7 @@ body.dark .feature-card h3 {
 }
 
 .features-intro {
+  background-color: var(--bg-color);
   max-width: 100%;
   margin: 40px;
   text-align: center;

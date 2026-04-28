@@ -27,10 +27,25 @@
         <div class="nav-links">
           <a href="../dashboard/dashboard.html">Dashboard</a>
           <a href="../irrigation/irrigation.html">Irrigation</a>
-          <a href="../analytics/analytics.html">Analytics</a>
-          <a href="../settings/settings.html">Settings</a>
+          <div class="nav-dropdown">
+
+            <button class="analytics-trigger" id="analyticsBtn">
+              Analytics
+              <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span></span>
+            </button>
+
+            <div class="nav-submenu" id="analyticsMenu">
+              <a href="../analytics/analytics.html">Analysis</a>
+              <a href="../analytics/analytics.html#reports">Reports</a>
+            </div>
+            </div>
+             <a href="../settings/settings.html">Settings</a>
+          </div>
         </div>
-      </div>
     </nav>
 
     <div class="nav-right">
@@ -50,165 +65,165 @@
         </button>
         <div class="profile-dropdown" id="profileDropdown">
           <div class="profile-header">
-    <div class="avatar">U</div>
-          <div class="user-info">
-            <strong id="username">User Name</strong>
-            <p id="email">email@example.com</p>
+            <div class="avatar">U</div>
+            <div class="user-info">
+              <strong id="username">User Name</strong>
+              <p id="email">email@example.com</p>
+            </div>
           </div>
+
+          <hr>
+
+          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
+
+          <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
+            out</button>
+
         </div>
-
-        <hr>
-
-        <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
-        
-        <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
-          out</button>
-
-      </div>
       </div>
     </div>
   </header>
 
-<section class="about-hero">
+  <section class="about-hero">
 
-  <h1>
-    HydroGen is redefining smart irrigation.
-  </h1>
+    <h1>
+      HydroGen is redefining smart irrigation.
+    </h1>
 
-  <p>
-    We build intelligent water systems that merge AI,
-    sustainability, and precision agriculture.
-    Our mission is to help farms grow more
-    using less water.
-  </p>
-
-</section>
-
-
-<section class="about-features reveal">
-
-  <div class="about-card">
-    <div class="icon-circle">💧</div>
-    <h3>Efficient</h3>
     <p>
-      AI-driven irrigation reduces water waste while maximizing
-      crop performance.
+      We build intelligent water systems that merge AI,
+      sustainability, and precision agriculture.
+      Our mission is to help farms grow more
+      using less water.
     </p>
-  </div>
 
-  <div class="about-card">
-    <div class="icon-circle">🌍</div>
-    <h3>Connected</h3>
-    <p>
-      Monitor and control your irrigation systems from anywhere,
-      in real time.
-    </p>
-  </div>
-
-  <div class="about-card">
-    <div class="icon-circle">🌱</div>
-    <h3>Sustainable</h3>
-    <p>
-      Eco-friendly water management designed for long-term
-      environmental balance.
-    </p>
-  </div>
-
-</section>
-
-<section class="team-section reveal">
-
-<h2>Our Team</h2>
-
-<div class="team-grid reveal">
+  </section>
 
 
-   <div class="three reveal">
-  <div class="member">
-    <img src="../assets/yousef.jpeg">
-    <h4>Youssef Mohamed El-Gebaly</h4>
-    <p>Hardware Specialist</p>
-  </div>
+  <section class="about-features reveal">
 
-  <div class="member">
-    <img src="../assets/Menna.jpeg">
-    <h4>Menna Magdi Mohammed</h4>
-    <p>Frontend Developer</p>
-  </div>
+    <div class="about-card">
+      <div class="icon-circle">💧</div>
+      <h3>Efficient</h3>
+      <p>
+        AI-driven irrigation reduces water waste while maximizing
+        crop performance.
+      </p>
+    </div>
 
-  <div class="member">
-    <img src="../assets/Hoda.jpeg">
-    <h4>Hoda Yasser Mohamed</h4>
-    <p>UI/UX Designer</p>
-</div>
-   </div>
+    <div class="about-card">
+      <div class="icon-circle">🌍</div>
+      <h3>Connected</h3>
+      <p>
+        Monitor and control your irrigation systems from anywhere,
+        in real time.
+      </p>
+    </div>
 
-   <div class="three reveal">
-  <div class="member">
-    <img src="../assets/mohamed.jpeg">
-    <h4>Mohamed Walid Yassen </h4>
-    <p>Frontend Developer</p>
-  </div>
+    <div class="about-card">
+      <div class="icon-circle">🌱</div>
+      <h3>Sustainable</h3>
+      <p>
+        Eco-friendly water management designed for long-term
+        environmental balance.
+      </p>
+    </div>
 
-  <div class="member">
-    <img src="../assets/ganna.jpeg">
-    <h4>Ganna Nasr El-sabe</h4>
-    <p>Backend Developer</p>
-  </div>
+  </section>
 
-    <div class="member">
-    <img src="team8.jpg">
-    <h4>Nada Mostafa Kamel</h4>
-    <p>Mobile App Developer</p>
-  </div>
+  <section class="team-section reveal">
 
-</div>
+    <h2>Our Team</h2>
+
+    <div class="team-grid reveal">
+
+
+      <div class="three reveal">
+        <div class="member">
+          <img src="../assets/yousef.jpeg">
+          <h4>Youssef Mohamed El-Gebaly</h4>
+          <p>Hardware Specialist</p>
+        </div>
+
+        <div class="member">
+          <img src="../assets/Menna.jpeg">
+          <h4>Menna Magdi Mohammed</h4>
+          <p>Frontend Developer</p>
+        </div>
+
+        <div class="member">
+          <img src="../assets/Hoda.jpeg">
+          <h4>Hoda Yasser Mohamed</h4>
+          <p>UI/UX Designer</p>
+        </div>
+      </div>
+
+      <div class="three reveal">
+        <div class="member">
+          <img src="../assets/mohamed.jpeg">
+          <h4>Mohamed Walid Yassen </h4>
+          <p>Frontend Developer</p>
+        </div>
+
+        <div class="member">
+          <img src="../assets/ganna.jpeg">
+          <h4>Ganna Nasr El-sabe</h4>
+          <p>Backend Developer</p>
+        </div>
+
+        <div class="member">
+          <img src="team8.jpg">
+          <h4>Nada Mostafa Kamel</h4>
+          <p>Mobile App Developer</p>
+        </div>
+
+      </div>
 
       <div class="three reveal">
 
-  <div class="member">
-    <img src="../assets/Esraa.jpeg">
-    <h4>Esraa Alaa Mohamed</h4>
-    <p>Frontend Developer</p>
-  </div>
-    <div class="member">
-    <img src="team10.jpg">
-    <h4>Menna Hussin Mohamed</h4>
-    <p>Product Manager</p>
-  </div>
+        <div class="member">
+          <img src="../assets/Esraa.jpeg">
+          <h4>Esraa Alaa Mohamed</h4>
+          <p>Frontend Developer</p>
+        </div>
+        <div class="member">
+          <img src="team10.jpg">
+          <h4>Menna Hussin Mohamed</h4>
+          <p>Product Manager</p>
+        </div>
 
-  <div class="member">
-    <img src="team5.jpg">
-    <h4>Kaber Abdelhameed Shawqi</h4>
-    <p>Backend Developer</p>
-  </div>
+        <div class="member">
+          <img src="team5.jpg">
+          <h4>Kaber Abdelhameed Shawqi</h4>
+          <p>Backend Developer</p>
+        </div>
 
-</div>
+      </div>
 
-   <div class="three reveal">
-  <div class="member">
-    <img src="../assets/mahmoud.jpeg">
-    <h4>Mahmoud elsaid elsaid</h4>
-    <p>Research Lead</p>
-  </div>
-  <div class="member">
-    <img src="../assets/mohamed ahmed.jpeg">
-    <h4>Mohamed Ahmed Abdelwahhab</h4>
-    <p>data collector</p>
-  </div>
+      <div class="three reveal">
+        <div class="member">
+          <img src="../assets/mahmoud.jpeg">
+          <h4>Mahmoud elsaid elsaid</h4>
+          <p>Research Lead</p>
+        </div>
+        <div class="member">
+          <img src="../assets/mohamed ahmed.jpeg">
+          <h4>Mohamed Ahmed Abdelwahhab</h4>
+          <p>data collector</p>
+        </div>
 
-  <div class="member">
-    <img src="../assets/adham.jpeg">
-    <h4>Adham Adel Elsharkawy</h4>
-    <p>Hardware Specialist</p>
-  </div>
+        <div class="member">
+          <img src="../assets/adham.jpeg">
+          <h4>Adham Adel Elsharkawy</h4>
+          <p>Hardware Specialist</p>
+        </div>
 
-</div>
-</div>
+      </div>
+    </div>
 
-</section>
+  </section>
 
-<footer class="footer">
+  <footer class="footer">
     <div class="footer-grid">
 
       <div>
@@ -264,8 +279,9 @@
   <script src="../firebase/firebase-config.js"></script>
   <script src="../about/about.js"></script>
   <script src="../theme/theme.js"></script>
-<script>
-    (function(){if(!localStorage.getItem("hydroUser"))window.location.replace("../landing/landing.html");})();
+  <script>
+    (function () { if (!localStorage.getItem("hydroUser")) window.location.replace("../landing/landing.html"); })();
   </script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -8,8 +8,11 @@
   <link rel="stylesheet" href="../theme/theme.css" />
   <link rel="stylesheet" href="../bootstrap-custom.css" />
   <link rel="stylesheet" href="../theme/design-system.css" />
+  <link rel="stylesheet" href="../home/Home.css" />
   <link rel="stylesheet" href="services.css" />
+
 </head>
+
 <body>
   <header class="header">
     <nav class="main-nav">
@@ -23,7 +26,23 @@
         <div class="nav-links">
           <a href="../dashboard/dashboard.html">Dashboard</a>
           <a href="../irrigation/irrigation.html">Irrigation</a>
-          <a href="../analytics/analytics.html">Analytics</a>
+          <div class="nav-dropdown">
+
+            <button class="analytics-trigger" id="analyticsBtn">
+              Analytics
+              <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span></span>
+            </button>
+
+            <div class="nav-submenu" id="analyticsMenu">
+              <a href="../analytics/analytics.html">Analysis</a>
+              <a href="../analytics/analytics.html#reports">Reports</a>
+            </div>
+          </div>
+
           <a href="../settings/settings.html">Settings</a>
         </div>
       </div>
@@ -46,53 +65,55 @@
         </button>
         <div class="profile-dropdown" id="profileDropdown">
           <div class="profile-header">
-    <div class="avatar">U</div>
-          <div class="user-info">
-            <strong id="username">User Name</strong>
-            <p id="email">email@example.com</p>
+            <div class="avatar">U</div>
+            <div class="user-info">
+              <strong id="username">User Name</strong>
+              <p id="email">email@example.com</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
+
+          <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
+            out</button>
+          <div class="theme-section">
+            <button class="theme-row" id="appearanceBtn">
+              🌙 Appearance ›
+            </button>
+
+            <div class="theme-submenu" id="themeMenu">
+              <button data-theme="system">Use device theme</button>
+              <button data-theme="dark">Dark theme</button>
+              <button data-theme="light">Light theme</button>
+            </div>
+
           </div>
         </div>
-
-        <hr>
-
-        <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
-        
-        <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
-          out</button>
-            <div class="theme-section">
-      <button class="theme-row" id="appearanceBtn">
-        🌙 Appearance ›
-      </button>
-
-      <div class="theme-submenu" id="themeMenu">
-        <button data-theme="system">Use device theme</button>
-        <button data-theme="dark">Dark theme</button>
-        <button data-theme="light">Light theme</button>
-      </div>
-
-    </div>
-      </div>
       </div>
     </div>
   </header>
-    <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- SIDEBAR -->
-    <div class="side-menu" id="sideMenu">
-        <button class="close-btn" id="closeBtn">✕</button>
-        <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
-        <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg"
-                class="icon">Dashboard</a>
-        <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg"
-                class="icon">Irrigation</a>
-        <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg"
-                class="icon">Analytics</a>
-        <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg"
-                class="icon">Settings</a>
-    </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
+    <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg"
+        class="icon">Dashboard</a>
+    <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg"
+        class="icon">Irrigation</a>
+    <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg"
+        class="icon">Analytics</a>
+    <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg" class="icon">Settings</a>
+  </div>
 
 
-<section class="features-intro reveal">
+
+
+  <section class="features-intro reveal">
     <h2>Our Offered Services</h2>
     <p>
       We are dedicated to bringing you smart and sustainable irrigation
@@ -166,7 +187,7 @@
     </div>
   </section>
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="footer-grid">
 
       <div>
@@ -184,7 +205,7 @@
       <div>
         <h4>Company</h4>
         <a href="../about/about.html">About</a>
-            <a href="../services/services.html">Services</a>
+        <a href="../services/services.html">Services</a>
         <a href="../our story/our_story.html">our story</a>
       </div>
 
@@ -223,8 +244,9 @@
   <script src="services.js"></script>
   <script src="../theme/theme.js"></script>
 
-<script>
-    (function(){if(!localStorage.getItem("hydroUser"))window.location.replace("../landing/landing.html");})();
+  <script>
+    (function () { if (!localStorage.getItem("hydroUser")) window.location.replace("../landing/landing.html"); })();
   </script>
 </body>
+
 </html>
