@@ -226,7 +226,7 @@ function initTheme() {
         else if (++tries > 10) { clearInterval(wait); maybeEmpty(); }
       }, 300);
     }
-    /* ANALYTICS SUBMENU */
+        /* ANALYTICS SUBMENU */
 const analyticsBtn   = document.getElementById("analyticsBtn");
 const analyticsMenu  = document.getElementById("analyticsMenu");
 const analyticsArrow = document.getElementById("analyticsArrow");
@@ -251,8 +251,9 @@ document.addEventListener("click", function(e){
 
 });
   }
+  }
 
-}
+
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initTheme);
@@ -268,5 +269,4 @@ const navLinks = document.getElementById("navLinks");
 menuBtn.addEventListener("click", ()=>{
   navLinks.classList.toggle("show");
 });
-
 
