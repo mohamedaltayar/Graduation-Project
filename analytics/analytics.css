@@ -1,4 +1,12 @@
-/* analytics.css */
+
+body.dark .text-muted {
+    color: #94a3b8 !important; /* Brighter slate-400 */
+}
+
+body.dark .bento-subtitle {
+    color: #cbd5e1 !important; /* Brighter slate-300 */
+}
+
 
 /* Analytics specific chart and metrics sizing */
 .chart-container {
@@ -15,16 +23,74 @@ body.dark .grey-bg {
     background-color: rgba(255, 255, 255, 0.03);
 }
 
+/* Layout for side-by-side Title and Filter */
+main.bento-container {
+    display: grid;
+    grid-template-areas:
+        "title filter"
+        "content content";
+    grid-template-columns: 1fr auto;
+    align-items: start;
+}
+
+.analytics-title-block {
+    grid-area: title;
+}
+
+.bento-grid {
+    grid-area: content;
+    grid-auto-rows: minmax(140px, auto) !important;
+    gap: 1rem;
+}
+
+.sticky-filter-bar {
+    grid-area: filter;
+    position: sticky;
+    top: 75px;
+    /* Accounts for header height + small gap */
+    z-index: 1000;
+    /* Ensure it stays above charts */
+    background: #ffffff;
+    /* Pure white to stand out against page background */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Stronger shadow */
+    transition: all 0.3s ease;
+    align-self: start;
+    width: fit-content;
+}
+
+@media (max-width: 991px) {
+    main.bento-container {
+        display: block;
+    }
+
+    .sticky-filter-bar {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+body.dark .sticky-filter-bar {
+    background: #1e293b;
+    /* Distinct dark background */
+    border-color: #334155;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
 /* Time Range Filter styling */
 .bento-filter-group {
-    background: rgba(0, 0, 0, 0.05);
-    border: none !important;
-    padding: 4px;
+    background: #e2e8f0;
+    /* Clear distinct grey background for the buttons container */
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px;
     border-radius: 16px !important;
 }
 
 body.dark .bento-filter-group {
-    background: rgba(255, 255, 255, 0.05);
+    background: #334155;
+    /* Distinct dark mode container */
+    border-color: #475569 !important;
 }
 
 .bento-filter-group .btn {
@@ -84,6 +150,26 @@ body.dark .glass-card {
     border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+/* Compact Metric Cards */
+.bento-card.glass-card {
+    padding: 1.25rem !important;
+    min-height: auto !important;
+}
+
+.bento-card.glass-card .mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+.bento-card.glass-card h2 {
+    font-size: 2.5rem !important;
+}
+
+.bento-card.glass-card .icon-box {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+}
+
 .progress {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -105,21 +191,21 @@ canvas {
 
 /* Analysis Panels */
 .analysis-panel {
-    border-color: rgba(0,0,0,0.05) !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 body.dark .analysis-panel {
-    border-color: rgba(255,255,255,0.05) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 .analysis-item {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid rgba(0,0,0,0.02);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 body.dark .analysis-item {
     background: rgba(255, 255, 255, 0.03) !important;
-    border-color: rgba(255,255,255,0.05);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 body.dark .analysis-item h4 {
@@ -128,7 +214,7 @@ body.dark .analysis-item h4 {
 
 .analysis-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .analysis-badge {
@@ -139,4 +225,68 @@ body.dark .analysis-item h4 {
     align-items: center;
     justify-content: center;
     font-size: 0.7rem;
+}
+
+/* Mini Chart Interactions */
+.clickable-chart {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clickable-chart:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+.expand-indicator {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--accent, #4f46e5);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.clickable-chart:hover .expand-indicator {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.clickable-chart::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.clickable-chart:hover::after {
+    opacity: 1;
+}
+
+body.dark .clickable-chart:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Optimization for Mini Charts */
+.clickable-chart .chart-container {
+    transition: transform 0.3s ease;
+}
+
+.clickable-chart:hover .chart-container {
+    transform: scale(0.98);
 }

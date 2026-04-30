@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCharts() {
         if (!soilChart || !tempChart || !humChart) return;
-        
+
         let displayData = [];
         const now = Date.now();
 
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayData = [...liveHistoryData];
         } else {
             let filteredData = [...historyData];
-            
+
             // Apply Time Filter
             if (currentFilter === 'Day') {
                 filteredData = filteredData.filter(d => now - d.time <= 24 * 60 * 60 * 1000);
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!hourMap.has(hourKey) || d.time > hourMap.get(hourKey).time) {
                         let ampm = date.getHours() >= 12 ? 'PM' : 'AM';
                         let hour12 = date.getHours() % 12 || 12;
-                        let dayName = currentFilter === 'Week' ? date.toLocaleDateString('en-US', {weekday: 'short'}) + ' ' : '';
+                        let dayName = currentFilter === 'Week' ? date.toLocaleDateString('en-US', { weekday: 'short' }) + ' ' : '';
                         hourMap.set(hourKey, { ...d, label: `${dayName}${hour12} ${ampm}` });
                     }
                 });
@@ -275,14 +275,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const v = child.val();
                 if (!v) return;
                 historyData.push({
-                    temp: +v.temp || 0, 
-                    hum: +v.hum || 0, 
+                    temp: +v.temp || 0,
+                    hum: +v.hum || 0,
                     soil: +v.soil || 0,
                     waterRaw: v.water,
                     time: +v.time || Date.now()
                 });
             });
-            
+
             historyData.sort((a, b) => a.time - b.time);
             updateCharts();
             updateAnalysisPanels(null);
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Maintain liveHistoryData for real-time charts (last 20 points)
             const nowTime = Date.now();
             const timeStr = new Date(nowTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            
+
             // Only push if time changes (once per second max)
             if (liveHistoryData.length === 0 || liveHistoryData[liveHistoryData.length - 1].label !== timeStr) {
                 liveHistoryData.push({
@@ -404,4 +404,14 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSavedData();
     initCharts();
     setupFirebase();
+
+    // Chart Click Handlers for Expansion
+    document.querySelectorAll('.clickable-chart').forEach(card => {
+        card.addEventListener('click', () => {
+            const chartType = card.getAttribute('data-chart');
+            if (chartType) {
+                window.open(`detail.html?type=${chartType}`, '_blank');
+            }
+        });
+    });
 });

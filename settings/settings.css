@@ -1,3 +1,16 @@
+/* settings.css */
+
+body.dark .text-muted {
+    color: #94a3b8 !important;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+    color: #f8fafc !important;
+}
+
+body.dark label {
+    color: #f8fafc !important;
+}
 
 
 
