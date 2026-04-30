@@ -2,19 +2,23 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Smart Irrigation</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../theme/theme.css" />
-  <link rel="stylesheet" href="../bootstrap-custom.css" />
-  <link rel="stylesheet" href="../theme/design-system.css" />
-  <link rel="stylesheet" href="../home/Home.css" />
-  <link rel="stylesheet" href="services.css" />
-
+    <meta charset="UTF-8" />
+    <title>Daily Reports - HydroGen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../theme/theme.css" />
+    <link rel="stylesheet" href="../bootstrap-custom.css" />
+    <link rel="stylesheet" href="../theme/design-system.css" />
+    <link rel="stylesheet" href="../home/Home.css" />
+    <link rel="stylesheet" href="daily.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
-   <header class="header">
+  <header class="header">
     <nav class="main-nav">
       <div class="nav-left">
         <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
@@ -129,81 +133,47 @@
 
 
 
-  <section class="features-intro reveal">
-    <h2>Our Offered Services</h2>
-    <p>
-      We are dedicated to bringing you smart and sustainable irrigation
-      solutions powered by AI — built
-      for efficiency and healthier crops.
-    </p>
-  </section>
 
-  <section class="features reveal">
 
-    <div class="feature-card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="../assets/extract water.svg" alt="">
-          <h3>Extract Water from Air</h3>
-          <p>
-            Advanced technology to convert atmospheric humidity into pure water
-            for agricultural use.
-          </p>
-        </div>
-        <div class="card-back">
-          <h3>Extract Water from Air</h3>
-          <p>
-            Our atmospheric water generation technology captures humidity
-            and transforms it into purified water suitable for irrigation.
-            This system ensures farms in dry regions maintain sustainable
-            water supply without relying on groundwater depletion.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="../assets/clean.svg" alt="">
-          <h3>Clean & Sustainable Water</h3>
-          <p>
-            Ecofriendly system providing renewable water source without
-            depleting natural resources.
-          </p>
-        </div>
-        <div class="card-back">
-          <h3>Clean & Sustainable Water</h3>
-          <p>
-            HydroGen provides eco-friendly water solutions powered by
-            renewable energy. The system reduces environmental impact
-            while delivering consistent water quality for crops.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="../assets/smart&efficient irrigation.svg" alt="">
-          <h3>Smart & Efficient Irrigation</h3>
-          <p>
-            Automated irrigation control for efficient water distribution and
-            optimal agricultural results.
-          </p>
-        </div>
-        <div class="card-back">
-          <h3>Smart & Efficient Irrigation</h3>
-          <p>
-            AI automation analyzes soil moisture and weather conditions
-            to optimize irrigation schedules. This increases crop yield
-            while minimizing water waste and operational costs.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <footer class="footer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
     <div class="footer-grid">
 
       <div>
@@ -223,6 +193,7 @@
         <a href="../about/about.html">About</a>
         <a href="../services/services.html">Services</a>
         <a href="../our story/our_story.html">our story</a>
+
       </div>
 
       <div>
@@ -257,12 +228,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
   <script src="../firebase/firebase-config.js"></script>
-  <script src="services.js"></script>
+  <script src="daily.js"></script>
   <script src="../theme/theme.js"></script>
-
-  <script>
-    (function () { if (!localStorage.getItem("hydroUser")) window.location.replace("../landing/landing.html"); })();
-  </script>
 </body>
-
 </html>

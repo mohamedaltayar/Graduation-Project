@@ -24,39 +24,40 @@
   </div>
 
   <header class="header">
-        <nav class="main-nav">
-            <div class="nav-left">
-                <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-                <a href="../home/Home.html" class="logo">
-                    <img src="../assets/water-drop-rain-drink 1.svg" alt="" class="icon">
-                    <span class="logo">HydroGyn</span>
-                    <span class="divider"></span>
-                </a>
+    <nav class="main-nav">
+      <div class="nav-left">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <a href="../home/Home.html" class="logo">
+          <img src="../assets/water-drop-rain-drink 1.svg" alt="HydroGen Logo" class="icon">
+          <span class="logo">HydroGen</span>
+          <span class="divider"></span>
+        </a>
+        <div class="nav-links">
+          <a href="../dashboard/dashboard.html">Dashboard</a>
+          <a href="../irrigation/irrigation.html">Irrigation</a>
+          <a href="../analytics/analytics.html">Analysis</a>
+          <div class="nav-dropdown">
 
-                <div class="nav-links">
-                    <a href="../dashboard/dashboard.html">Dashboard</a>
-                    <a href="../irrigation/irrigation.html">Irrigation</a>
-                    <div class="nav-dropdown">
+            <button class="reports-trigger" id="reportsBtnDesktop">
+              Reports
+              <span class="arrow-icon" id="reportsArrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span></span>
+            </button>
 
-                        <button class="analytics-trigger" id="analyticsBtn">
-                            Analytics
-                            <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span></span>
-                        </button>
+            <div class="nav-submenu" id="reportsMenuDesktop">
+              <a href="../daily/daily.html">daily</a>
+              <a href="../weekly/weekly.html">weekly</a>
+              <a href="../monthly/monthly.html">monthly</a>
 
-                        <div class="nav-submenu" id="analyticsMenu">
-                            <a href="../analytics/analytics.html">Analysis</a>
-                            <a href="../analytics/analytics.html#reports">Reports</a>
-                        </div>
-                    </div>
-
-                    <a href="../settings/settings.html">Settings</a>
-                </div>
-        </nav>
+            </div>
+          </div>
+          <a href="../settings/settings.html">Settings</a>
+        </div>
+      </div>
+    </nav>
 
     <div class="nav-right">
       <div class="notification-wrapper">
@@ -84,7 +85,8 @@
 
           <hr>
 
-          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch account</button>
+          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch
+            account</button>
 
           <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
             out</button>
@@ -118,7 +120,22 @@
     <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg"
         class="icon">Analytics</a>
     <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg" class="icon">Settings</a>
+    <div class="reports-section">
+      <button class="reports-row" id="reportsBtnMobile">
+        <span>
+          <img src="../assets/reports.svg" alt="">
+        </span> Reports ›
+      </button>
+
+      <div class="reports-submenu" id="reportsMenuMobile">
+        <a href="../daily/daily.html">Daily Reports</a>
+        <a href="../weekly/weekly.html">Weekly Reports</a>
+        <a href="../monthly/monthly.html">Monthly Reports</a>
+      </div>
+
+    </div>
   </div>
+
 
 
 

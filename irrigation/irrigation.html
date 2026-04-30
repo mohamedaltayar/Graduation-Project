@@ -22,105 +22,118 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="main-nav">
-            <div class="nav-left">
-                <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-                <a href="../home/Home.html" class="logo">
-                    <img src="../assets/water-drop-rain-drink 1.svg" alt="HydroGen Logo" class="icon">
-                    <span class="logo">HydroGen</span>
-                    <span class="divider"></span>
-                </a>
-                <div class="nav-links">
-                    <a href="../dashboard/dashboard.html">Dashboard</a>
-                    <a href="../irrigation/irrigation.html">Irrigation</a>
-                    <div class="nav-dropdown">
+  <header class="header">
+    <nav class="main-nav">
+      <div class="nav-left">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <a href="../home/Home.html" class="logo">
+          <img src="../assets/water-drop-rain-drink 1.svg" alt="HydroGen Logo" class="icon">
+          <span class="logo">HydroGen</span>
+          <span class="divider"></span>
+        </a>
+        <div class="nav-links">
+          <a href="../dashboard/dashboard.html">Dashboard</a>
+          <a href="../irrigation/irrigation.html">Irrigation</a>
+          <a href="../analytics/analytics.html">Analysis</a>
+          <div class="nav-dropdown">
 
-                        <button class="analytics-trigger" id="analyticsBtn">
-                            Analytics
-                            <span class="arrow-icon" id="analyticsArrow"><span class="arrow-icon" id="analyticsArrow">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span></span>
-                        </button>
+            <button class="reports-trigger" id="reportsBtnDesktop">
+              Reports
+              <span class="arrow-icon" id="reportsArrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span></span>
+            </button>
 
-                        <div class="nav-submenu" id="analyticsMenu">
-                            <a href="../analytics/analytics.html">Analysis</a>
-                            <a href="../analytics/analytics.html#reports">Reports</a>
-                        </div>
-                    </div>
-                    <a href="../settings/settings.html">Settings</a>
-                </div>
+            <div class="nav-submenu" id="reportsMenuDesktop">
+              <a href="../daily/daily.html">daily</a>
+              <a href="../weekly/weekly.html">weekly</a>
+              <a href="../monthly/monthly.html">monthly</a>
+
             </div>
-        </nav>
-
-        <div class="nav-right">
-            <div class="notification-wrapper">
-                <i class="fas fa-bell notification-icon" id="notifToggle"></i>
-                <span class="notif-badge" id="notifBadge">0</span>
-                <div class="notification-dropdown">
-                    <div class="bento-card">
-                        <h6>Active Alerts</h6>
-                        <div id="alertsContainer"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="profile-menu">
-                <button class="profile-btn" id="profileBtn">
-                    <img src="../assets/Vector.svg" id="profileImage" alt="profile">
-                </button>
-                <div class="profile-dropdown" id="profileDropdown">
-                    <div class="profile-header">
-                        <div class="avatar">U</div>
-                        <div class="user-info">
-                            <strong id="username">User Name</strong>
-                            <p id="email">email@example.com</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch
-                        account</button>
-
-                    <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt=""
-                            class="icon">Log
-                        out</button>
-                    <div class="theme-section">
-                        <button class="theme-row" id="appearanceBtn">
-                            🌙 Appearance ›
-                        </button>
-
-                        <div class="theme-submenu" id="themeMenu">
-                            <button data-theme="system">Use device theme</button>
-                            <button data-theme="dark">Dark theme</button>
-                            <button data-theme="light">Light theme</button>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
+          </div>
+          <a href="../settings/settings.html">Settings</a>
         </div>
-    </header>
+      </div>
+    </nav>
 
-    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="nav-right">
+      <div class="notification-wrapper">
+        <i class="fas fa-bell notification-icon" id="notifToggle"></i>
+        <span class="notif-badge" id="notifBadge"></span>
+        <div class="notification-dropdown">
+          <div class="bento-card">
+            <h6>Active Alerts</h6>
+            <div id="alertsContainer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-menu">
+        <button class="profile-btn" id="profileBtn">
+          <img src="../assets/Vector.svg" id="profileImage" alt="profile">
+        </button>
+        <div class="profile-dropdown" id="profileDropdown">
+          <div class="profile-header">
+            <div class="avatar">U</div>
+            <div class="user-info">
+              <strong id="username">User Name</strong>
+              <p id="email">email@example.com</p>
+            </div>
+          </div>
 
-    <!-- SIDEBAR -->
-    <div class="side-menu" id="sideMenu">
-        <button class="close-btn" id="closeBtn">✕</button>
-        <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
-        <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg"
-                class="icon">Dashboard</a>
-        <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg"
-                class="icon">Irrigation</a>
-        <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg"
-                class="icon">Analytics</a>
-        <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg"
-                class="icon">Settings</a>
+          <hr>
+
+          <button class="drop-item"><img src="../assets/switch.svg" alt="" class="icon">Switch
+            account</button>
+
+          <button class="drop-item danger" id="logoutBtn"><img src="../assets/logout.svg" alt="" class="icon">Log
+            out</button>
+          <div class="theme-section">
+            <button class="theme-row" id="appearanceBtn">
+              🌙 Appearance ›
+            </button>
+
+            <div class="theme-submenu" id="themeMenu">
+              <button data-theme="system">Use device theme</button>
+              <button data-theme="dark">Dark theme</button>
+              <button data-theme="light">Light theme</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- SIDEBAR -->
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <a href="../home/Home.html" class="menu-item"> <img src="../assets/Home.svg" class="icon">Home</a>
+    <a href="../dashboard/dashboard.html" class="menu-item active"><img src="../assets/Vector 48 (Stroke).svg"
+        class="icon">Dashboard</a>
+    <a href="../irrigation/irrigation.html" class="menu-item"><img src="../assets/water-drop 5.svg"
+        class="icon">Irrigation</a>
+    <a href="../analytics/analytics.html" class="menu-item"><img src="../assets/Trending-up.svg"
+        class="icon">Analytics</a>
+    <a href="../settings/settings.html" class="menu-item"><img src="../assets/settings-01.svg" class="icon">Settings</a>
+    <div class="reports-section">
+      <button class="reports-row" id="reportsBtnMobile">
+        <span>
+          <img src="../assets/reports.svg" alt="">
+        </span> Reports ›
+      </button>
+
+      <div class="reports-submenu" id="reportsMenuMobile">
+        <a href="../daily/daily.html">Daily Reports</a>
+        <a href="../weekly/weekly.html">Weekly Reports</a>
+        <a href="../monthly/monthly.html">Monthly Reports</a>
+      </div>
+
+    </div>
+  </div>
 
 
     <main class="main-content">

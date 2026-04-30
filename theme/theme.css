@@ -150,7 +150,6 @@ DROPDOWN
   top:130%;
   left:0;
   min-width:180px;
-  background:var(--card-bg);
   border:1px solid var(--border-color);
   border-radius:14px;
   padding:10px 0;
@@ -399,6 +398,53 @@ body.dark .menu-item.active {
     background: var(--accent);
 }
 
+.reports-section {
+    padding: 0;
+}
+
+.reports-row {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    padding: 10px 14px 10px 18px;
+    border-radius: 12px;
+    width: 100%;
+    text-align: left;
+}
+
+.reports-row:hover {
+        background: var(--accent);
+
+}
+
+.reports-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+    padding-left: 18px;
+}
+.reports-submenu.show{
+    display: flex;
+}
+.reports-submenu a,
+.nav-submenu a{
+  display:block;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.3s;
+}
+
+.reports-submenu a:hover,
+.nav-submenu a:hover{
+  background:var(--accent);
+  color:white;
+}
 
 
 
@@ -1232,7 +1278,7 @@ MOBILE
 }
 
 /* الزرار */
-.analytics-trigger{
+.reports-trigger{
   background: none;
   border: none;
   color: #cbd5e1;
@@ -1245,7 +1291,7 @@ MOBILE
   padding: 0;
 }
 
-.analytics-trigger:hover{
+.reports-trigger:hover{
   color:#ffe44d;
 }
 
@@ -1298,7 +1344,7 @@ MOBILE
     display:block;
   }
 
-  .analytics-trigger{
+  .reports-trigger{
     width:100%;
     justify-content:space-between;
     font-size:16px;
@@ -1324,4 +1370,22 @@ MOBILE
     display:block;
   }
 
+}
+
+/* nav submenu links color */
+.nav-submenu a{
+  color: #1b1b1b !important;
+}
+
+body.dark .nav-submenu a{
+  color: #e5e7eb !important;
+}
+
+
+.nav-submenu a:hover{
+  color: #ffffff !important;
+}
+body.dark .nav-submenu a:hover{
+  background-color: #fff !important;
+  color: #1b1b1b !important;
 }

@@ -92,6 +92,10 @@ body {
 .about-hero h1 {
     font-size: 48px;
     line-height: 1.2;
+    color: var(--header-bg);
+}
+
+body.dark .about-hero h1 {
     color: var(--accent);
 }
 
@@ -113,8 +117,12 @@ body {
 }
 
 .value h3 {
-    color: var(--accent);
+    color: var(--header-bg);
     font-size: 22px;
+}
+
+body.dark .value h3 {
+    color: var(--accent);
 }
 
 .value p {
@@ -131,10 +139,13 @@ body {
 .team-section h2 {
     font-size: 36px;
     margin-bottom: 60px;
-    color: var(--accent);
+    color: var(--header-bg);
     text-align: center;
 }
 
+body.dark .team-section h2 {
+    color: var(--accent);
+}
 .team-grid {
     padding: 20px;
     gap: 50px;
